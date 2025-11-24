@@ -11,10 +11,9 @@ export default function Hero() {
                     src="/images/landing/hero.png"
                     alt="Nuzii Modest Fashion"
                     fill
-                    className="object-cover opacity-90"
+                    className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-nuziiBeige/80 to-transparent/20" />
             </div>
 
             {/* Content */}
