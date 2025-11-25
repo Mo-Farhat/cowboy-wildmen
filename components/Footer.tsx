@@ -4,6 +4,7 @@ import SocialMedia from "./new/SocialMedia";
 import { customerCareLinks } from "@/constants";
 import { getAllCategories } from "@/sanity/helpers";
 import { ArrowRight } from "lucide-react";
+import type { Category } from "@/sanity.types";
 
 const Footer = async () => {
   // Fetch categories from Sanity
@@ -36,7 +37,7 @@ const Footer = async () => {
             <h3 className="font-semibold text-nuziiText text-lg mb-6">Shop</h3>
             <ul className="space-y-3">
               {categories && categories.length > 0 ? (
-                categories.map((category: any) => (
+                categories.map((category: Category) => (
                   <li key={category.slug?.current || category._id}>
                     <Link
                       href={`/category/${category.slug?.current}`}
