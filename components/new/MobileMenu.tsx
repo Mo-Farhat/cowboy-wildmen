@@ -12,8 +12,8 @@ const MobileMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
   };
   return (
     <>
-      <button onClick={toggleSidebar}>
-        <AlignLeft className="w-6 h-6 hover:text-hoverColor hoverEffect md:hidden" />
+      <button onClick={toggleSidebar} className="md:hidden text-nuziiText hover:text-nuziiRoseGoldDark transition-colors">
+        <AlignLeft className="w-6 h-6" />
       </button>
       <div className="md:hidden">
         <Sidebar

@@ -52,9 +52,8 @@ const ImageView = ({ images = [] }: Props) => {
           <button
             key={image._key}
             onClick={() => setActive(image)}
-            className={`border rounded-md overflow-hidden hover:cursor-pointer ${
-              active._key === image._key ? "ring-1 ring-darkColor" : ""
-            }`}
+            className={`border rounded-md overflow-hidden hover:cursor-pointer ${active._key === image._key ? "ring-1 ring-darkColor" : ""
+              }`}
           >
             <Image
               src={urlFor(image).url()}

@@ -1,7 +1,8 @@
-import { X } from "lucide-react";
+import { X, ChevronDown, ChevronRight } from "lucide-react";
 import { usePathname } from "next/navigation";
-import React from "react";
-import { motion } from "motion/react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { createPortal } from "react-dom";
 import Logo from "./Logo";
 import Link from "next/link";
 import { useOutsideClick } from "@/hooks";
@@ -14,55 +15,158 @@ interface SidebarProps {
   categories: CATEGORIES_QUERYResult;
 }
 
+
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
   const pathname = usePathname();
   const sidebarRef = useOutsideClick<HTMLDivElement>(onClose);
+  const [isShopOpen, setIsShopOpen] = useState(true);
 
-  return (
-    <div
-      className={`fixed inset-y-0 left-0 z-50 w-full bg-darkColor/50 shadow-xl transform ${isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform ease-in-out duration-300`}
-    >
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.3 }}
-        ref={sidebarRef}
-        className="min-w-72 max-w-96 bg-darkColor h-full text-primary-foreground p-10 border-r border-r-hoverColor/30 flex flex-col gap-6"
-      >
-        <div className="flex items-center justify-between">
-          <Logo className="text-white">NUZII</Logo>
-          <button
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return createPortal(
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             onClick={onClose}
-            className="hover:text-red-500 hoverEffect cursor-pointer"
+            className="fixed inset-0 bg-black/50 z-50 backdrop-blur-sm md:hidden"
+          />
+
+          {/* Sidebar */}
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            ref={sidebarRef}
+            className="fixed inset-y-0 left-0 z-50 w-[80%] max-w-sm bg-white shadow-2xl md:hidden overflow-y-auto"
           >
-            <X />
-          </button>
-        </div>
-        <div className="flex flex-col gap-3.5 text-base font-semibold tracking-wide text-zinc-400">
-          <Link
-            onClick={onClose}
-            href={"/"}
-            className={`hover:text-white hoverEffect ${pathname === `/` && "text-white"
-              }`}
-          >
-            Home
-          </Link>
-          {categories?.map((item) => (
-            <Link
-              onClick={onClose}
-              key={item?.title}
-              href={`/category/${item?.slug?.current}`}
-              className={`hover:text-white hoverEffect ${pathname === `/category/${item?.slug?.current}` && "text-white"
-                }`}
-            >
-              {item?.title}
-            </Link>
-          ))}
-        </div>
-        <SocialMedia />
-      </motion.div>
-    </div>
+            <div className="flex flex-col h-full">
+              {/* Header */}
+              <div className="p-6 flex items-center justify-between border-b border-nuziiRoseGold/20">
+                <Logo className="text-2xl tracking-[0.2em] font-light text-nuziiText">NUZII</Logo>
+                <button
+                  onClick={onClose}
+                  className="p-2 text-nuziiText hover:text-nuziiRoseGoldDark transition-colors rounded-full hover:bg-nuziiCream"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <div className="flex-1 py-6 px-4 flex flex-col gap-2">
+                <Link
+                  onClick={onClose}
+                  href="/"
+                  className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between ${pathname === "/"
+                    ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
+                    : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                    }`}
+                >
+                  Home
+                </Link>
+
+                {/* Shop Accordion */}
+                <div className="flex flex-col">
+                  <button
+                    onClick={() => setIsShopOpen(!isShopOpen)}
+                    className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between w-full ${pathname.startsWith("/shop") || pathname.startsWith("/category")
+                      ? "text-nuziiRoseGoldDark"
+                      : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                      }`}
+                  >
+                    <span>Shop</span>
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform duration-300 ${isShopOpen ? "rotate-180" : ""
+                        }`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {isShopOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden pl-4"
+                      >
+                        <div className="pl-4 border-l-2 border-nuziiRoseGold/20 flex flex-col gap-1 py-2">
+                          <Link
+                            onClick={onClose}
+                            href="/shop"
+                            className={`px-4 py-2 rounded-lg text-base transition-colors flex items-center gap-2 ${pathname === "/shop"
+                              ? "text-nuziiRoseGoldDark font-medium"
+                              : "text-nuziiTextLight hover:text-nuziiRoseGoldDark"
+                              }`}
+                          >
+                            All Products
+                          </Link>
+                          {categories?.map((item) => (
+                            <Link
+                              onClick={onClose}
+                              key={item?.title}
+                              href={`/category/${item?.slug?.current}`}
+                              className={`px-4 py-2 rounded-lg text-base transition-colors flex items-center gap-2 capitalize ${pathname === `/category/${item?.slug?.current}`
+                                ? "text-nuziiRoseGoldDark font-medium"
+                                : "text-nuziiTextLight hover:text-nuziiRoseGoldDark"
+                                }`}
+                            >
+                              {item?.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <Link
+                  onClick={onClose}
+                  href="/about"
+                  className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between ${pathname === "/about"
+                    ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
+                    : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                    }`}
+                >
+                  About
+                </Link>
+
+                <Link
+                  onClick={onClose}
+                  href="/contact"
+                  className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between ${pathname === "/contact"
+                    ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
+                    : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                    }`}
+                >
+                  Contact
+                </Link>
+              </div>
+
+              {/* Footer */}
+              <div className="p-6 border-t border-nuziiRoseGold/20 bg-nuziiCream/30">
+                <SocialMedia />
+                <p className="text-center text-xs text-nuziiTextLight mt-4">
+                  © {new Date().getFullYear()} NUZII. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>,
+    document.body
   );
 };
 
