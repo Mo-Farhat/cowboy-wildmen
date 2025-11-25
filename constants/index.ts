@@ -36,9 +36,9 @@ export const customerCareLinks = [
 ];
 
 export const socialMediaLinks = [
-  { title: "Instagram", href: "https://instagram.com/nuzii", platform: "instagram" },
-  { title: "TikTok", href: "https://tiktok.com/@nuzii", platform: "tiktok" },
-  { title: "Facebook", href: "https://facebook.com/nuzii", platform: "facebook" },
+  { title: "Instagram", href: "https://www.instagram.com/nuzi.co?igsh=aHJzYjExZXM2NGY5", platform: "instagram" },
+  { title: "TikTok", href: "https://www.tiktok.com/@nuzii.co?_r=1&_t=ZS-91gyr8GtuZl", platform: "tiktok" },
+  { title: "Facebook", href: "https://facebook.com", platform: "facebook" },
   { title: "WhatsApp Support", href: "https://wa.me/1234567890", platform: "whatsapp" },
 ];
 

@@ -24,12 +24,12 @@ const Header = async () => {
     <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-nuziiRoseGold/20 py-4 transition-all duration-300">
       <Container className="flex items-center justify-between gap-4">
         {/* Left: Navigation Menu */}
-        <div className="hidden md:block w-1/3">
+        <div className="hidden xl:block w-1/3">
           <HeaderMenu categories={categories} />
         </div>
 
         {/* Mobile Menu Trigger (Visible on mobile only) */}
-        <div className="md:hidden w-1/3">
+        <div className="xl:hidden w-1/3">
           <MobileMenu categories={categories} />
         </div>
 

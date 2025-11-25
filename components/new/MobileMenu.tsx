@@ -12,10 +12,10 @@ const MobileMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
   };
   return (
     <>
-      <button onClick={toggleSidebar} className="md:hidden text-nuziiText hover:text-nuziiRoseGoldDark transition-colors">
+      <button onClick={toggleSidebar} className="xl:hidden text-nuziiText hover:text-nuziiRoseGoldDark transition-colors">
         <AlignLeft className="w-6 h-6" />
       </button>
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <Sidebar
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}

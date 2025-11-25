@@ -10,7 +10,7 @@ const HeaderMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <div className="hidden md:inline-flex items-center gap-8 text-sm font-medium text-nuziiText tracking-wide">
+    <div className="hidden xl:inline-flex items-center gap-8 text-sm font-medium text-nuziiText tracking-wide">
       <Link
         href={"/"}
         className={`hover:text-nuziiRoseGoldDark transition-colors duration-300 ${isActive("/") ? "text-nuziiRoseGoldDark" : ""
@@ -22,8 +22,8 @@ const HeaderMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
       <div className="relative group">
         <button
           className={`flex items-center gap-1 hover:text-nuziiRoseGoldDark transition-colors duration-300 ${pathname.startsWith("/shop") || pathname.startsWith("/category")
-              ? "text-nuziiRoseGoldDark"
-              : ""
+            ? "text-nuziiRoseGoldDark"
+            : ""
             }`}
         >
           Shop

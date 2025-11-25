@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/50 z-50 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 bg-black/50 z-50 backdrop-blur-sm xl:hidden"
           />
 
           {/* Sidebar */}
@@ -49,7 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             ref={sidebarRef}
-            className="fixed inset-y-0 left-0 z-50 w-[80%] max-w-sm bg-white shadow-2xl md:hidden overflow-y-auto"
+            className="fixed inset-y-0 left-0 z-50 w-[80%] max-w-sm bg-white shadow-2xl xl:hidden overflow-y-auto"
           >
             <div className="flex flex-col h-full">
               {/* Header */}
