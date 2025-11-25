@@ -8,6 +8,7 @@ import {
   BEST_SELLING_QUERY,
   TOP_RATED_QUERY,
   FEATURED_CATEGORIES_QUERY,
+  ALL_PRODUCTS_QUERY,
 } from "@/sanity/helpers/shopQueries";
 import ShopHero from "@/components/shop/ShopHero";
 import ProductShowcaseRow from "@/components/shop/ProductShowcaseRow";
@@ -15,6 +16,7 @@ import PromotionalSection from "@/components/shop/PromotionalSection";
 import FeaturedProducts from "@/components/shop/FeaturedProducts";
 import MidPageBanners from "@/components/shop/MidPageBanners";
 import FeaturedCategories from "@/components/shop/FeaturedCategories";
+import AllProductsSection from "@/components/shop/AllProductsSection";
 
 const ShopPage = async () => {
   // Fetch all data in parallel
@@ -27,6 +29,7 @@ const ShopPage = async () => {
     bestSelling,
     topRated,
     categories,
+    allProducts,
   ] = await Promise.all([
     client.fetch(SHOP_HERO_QUERY),
     client.fetch(PRODUCT_SHOWCASE_QUERY),
@@ -36,6 +39,7 @@ const ShopPage = async () => {
     client.fetch(BEST_SELLING_QUERY),
     client.fetch(TOP_RATED_QUERY),
     client.fetch(FEATURED_CATEGORIES_QUERY),
+    client.fetch(ALL_PRODUCTS_QUERY),
   ]);
 
   return (
@@ -59,6 +63,9 @@ const ShopPage = async () => {
       {/* Mid-Page Banners */}
       <MidPageBanners banners={midPageBanners} />
 
+      {/* All Products Section with Category Filter */}
+      <AllProductsSection categories={categories} initialProducts={allProducts} />
+
       {/* Featured Categories */}
       <FeaturedCategories categories={categories} />
     </div>
@@ -66,3 +73,4 @@ const ShopPage = async () => {
 };
 
 export default ShopPage;
+

@@ -129,3 +129,19 @@ export const FEATURED_CATEGORIES_QUERY = defineQuery(`
     image
   }
 `);
+
+// All products query
+export const ALL_PRODUCTS_QUERY = defineQuery(`
+  *[_type == "product"] | order(name asc) {
+    _id,
+    name,
+    slug,
+    price,
+    discount,
+    images,
+    status,
+    rating,
+    categories
+  }
+`);
+
