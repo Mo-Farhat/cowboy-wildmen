@@ -25,6 +25,23 @@ export const categoriesData = [
   { title: "Jewellery", href: "/jewellery" },
   { title: "Hijab Accessories", href: "/hijab-accessories" },
 ];
+export const customerCareLinks = [
+  { title: "Contact Us", href: "/contact" },
+  { title: "Delivery Info", href: "/delivery" },
+  { title: "Returns", href: "/returns" },
+  { title: "Order Tracking", href: "/tracking" },
+  { title: "Size Guide", href: "/size-guide" },
+  { title: "FAQs", href: "/faqs" },
+  { title: "Payment Options", href: "/payment" },
+];
+
+export const socialMediaLinks = [
+  { title: "Instagram", href: "https://instagram.com/nuzii", platform: "instagram" },
+  { title: "TikTok", href: "https://tiktok.com/@nuzii", platform: "tiktok" },
+  { title: "Facebook", href: "https://facebook.com/nuzii", platform: "facebook" },
+  { title: "WhatsApp Support", href: "https://wa.me/1234567890", platform: "whatsapp" },
+];
+
 export const faqsData = [
   {
     question: "What services does NUZII offer?",
