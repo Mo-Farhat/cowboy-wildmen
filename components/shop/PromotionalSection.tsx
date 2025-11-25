@@ -15,7 +15,6 @@ interface PromotionalSectionProps {
         };
         ctaText?: string;
         ctaLink: string;
-        size: string;
         placement: string;
     }>;
 }

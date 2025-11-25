@@ -46,7 +46,6 @@ export const PROMO_BANNERS_QUERY = defineQuery(`
     image,
     ctaText,
     ctaLink,
-    size,
     placement
   }
 `);
@@ -60,7 +59,6 @@ export const PROMO_GRID_BANNERS_QUERY = defineQuery(`
     image,
     ctaText,
     ctaLink,
-    size,
     placement
   }
 `);
@@ -74,7 +72,6 @@ export const MID_PAGE_BANNERS_QUERY = defineQuery(`
     image,
     ctaText,
     ctaLink,
-    size,
     placement
   }
 `);

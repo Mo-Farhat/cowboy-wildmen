@@ -82,12 +82,10 @@ export const productType = defineType({
       type: "string",
       options: {
         list: [
-          { title: "Tshirt", value: "tshirt" },
-          { title: "Jacket", value: "jacket" },
-          { title: "Pants", value: "pants" },
-          { title: "Hoodie", value: "hoodie" },
-          { title: "Short", value: "short" },
-          { title: "Others", value: "others" },
+          { title: "Shawls", value: "shawls" },
+          { title: "Bags", value: "bags" },
+          { title: "Jewellery", value: "jewellery" },
+          { title: "Hijab Accessories", value: "hijab-accessories" },
         ],
       },
     }),

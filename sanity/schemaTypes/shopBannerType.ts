@@ -41,20 +41,6 @@ export const shopBannerType = defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
-            name: "size",
-            title: "Banner Size",
-            type: "string",
-            options: {
-                list: [
-                    { title: "Large", value: "large" },
-                    { title: "Small", value: "small" },
-                    { title: "Wide", value: "wide" },
-                    { title: "Medium", value: "medium" },
-                ],
-            },
-            validation: (Rule) => Rule.required(),
-        }),
-        defineField({
             name: "placement",
             title: "Banner Placement",
             type: "string",
