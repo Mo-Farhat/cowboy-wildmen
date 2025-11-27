@@ -12,6 +12,7 @@ interface AllProductsSectionProps {
         title: string;
         slug: { current: string };
     }>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     initialProducts: any[];
 }
 
@@ -97,8 +98,8 @@ export default function AllProductsSection({
                                         setIsDropdownOpen(false);
                                     }}
                                     className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${selectedCategory === "all"
-                                            ? "bg-nuziiRoseGold text-white"
-                                            : "hover:bg-nuziiCream text-nuziiText"
+                                        ? "bg-nuziiRoseGold text-white"
+                                        : "hover:bg-nuziiCream text-nuziiText"
                                         }`}
                                 >
                                     All Products
@@ -111,8 +112,8 @@ export default function AllProductsSection({
                                             setIsDropdownOpen(false);
                                         }}
                                         className={`w-full text-left px-4 py-3 rounded-lg transition-colors capitalize ${selectedCategory === category.slug.current
-                                                ? "bg-nuziiRoseGold text-white"
-                                                : "hover:bg-nuziiCream text-nuziiText"
+                                            ? "bg-nuziiRoseGold text-white"
+                                            : "hover:bg-nuziiCream text-nuziiText"
                                             }`}
                                     >
                                         {category.title}
@@ -141,7 +142,9 @@ export default function AllProductsSection({
                             transition={{ duration: 0.3 }}
                             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
                         >
+                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                             {products.map((product: any) => (
+                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                 <ProductCard key={product._id} product={product as any} />
                             ))}
                         </motion.div>

@@ -84,7 +84,7 @@ async function createOrderInSanity(
     total_details,
   } = session;
 
-  const { orderNumber, customerName, customerEmail, clerkUserId } =
+  const { orderNumber, customerName, customerEmail, userId } =
     metadata as unknown as Metadata;
 
   const lineItemsWithProduct = await stripe.checkout.sessions.listLineItems(
@@ -108,7 +108,7 @@ async function createOrderInSanity(
     stripePaymentIntentId: payment_intent,
     customerName,
     stripeCustomerId: customerEmail,
-    clerkUserId: clerkUserId,
+    clerkUserId: userId, // Keeping the field name 'clerkUserId' in Sanity for now to avoid schema migration, but storing Firebase UID
     email: customerEmail,
     currency,
     amountDiscount: total_details?.amount_discount
@@ -121,10 +121,10 @@ async function createOrderInSanity(
     orderDate: new Date().toISOString(),
     invoice: invoice
       ? {
-          id: invoice.id,
-          number: invoice.number,
-          hosted_invoice_url: invoice.hosted_invoice_url,
-        }
+        id: invoice.id,
+        number: invoice.number,
+        hosted_invoice_url: invoice.hosted_invoice_url,
+      }
       : null,
   });
   return order;
