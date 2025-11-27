@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 interface Props {
   className?: string;
+  children?: React.ReactNode;
 }
 
 const Logo = ({ className }: Props) => {
