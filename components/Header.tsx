@@ -35,7 +35,7 @@ const Header = async () => {
 
         {/* Center: Logo */}
         <div className="w-1/3 flex justify-center">
-          <Logo className="text-3xl tracking-[0.2em] font-light">NUZII</Logo>
+          <Logo className="w-28 -mt-1.5 xl:mt-0" />
         </div>
 
         {/* Right: Utility Icons */}

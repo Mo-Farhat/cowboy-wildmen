@@ -54,7 +54,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
             <div className="flex flex-col h-full">
               {/* Header */}
               <div className="p-6 flex items-center justify-between border-b border-nuziiRoseGold/20">
-                <Logo className="text-2xl tracking-[0.2em] font-light text-nuziiText">NUZII</Logo>
+                <Logo className="w-24" />
                 <button
                   onClick={onClose}
                   className="p-2 text-nuziiText hover:text-nuziiRoseGoldDark transition-colors rounded-full hover:bg-nuziiCream"

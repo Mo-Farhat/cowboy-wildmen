@@ -17,7 +17,7 @@ const Footer = async () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1: About Nuzii */}
           <div className="space-y-6">
-            <Logo className="text-nuziiRoseGoldDark">Nuzii</Logo>
+            <Logo className="w-24 mb-2" />
             <p className="text-nuziiText text-sm leading-relaxed">
               Nuzii brings soft, modest friendly, everyday fashion to women who love simple and elegant style.
               <br />
