@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import ProductCard from "@/components/ProductCard";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown, Loader2 } from "lucide-react";
+import { Product } from "@/sanity.types";
 
 interface AllProductsSectionProps {
     categories: Array<{
@@ -12,7 +13,7 @@ interface AllProductsSectionProps {
         title: string;
         slug: { current: string };
     }>;
-    initialProducts: any[];
+    initialProducts: Product[];
 }
 
 export default function AllProductsSection({
@@ -97,8 +98,8 @@ export default function AllProductsSection({
                                         setIsDropdownOpen(false);
                                     }}
                                     className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${selectedCategory === "all"
-                                            ? "bg-nuziiRoseGold text-white"
-                                            : "hover:bg-nuziiCream text-nuziiText"
+                                        ? "bg-nuziiRoseGold text-white"
+                                        : "hover:bg-nuziiCream text-nuziiText"
                                         }`}
                                 >
                                     All Products
@@ -111,8 +112,8 @@ export default function AllProductsSection({
                                             setIsDropdownOpen(false);
                                         }}
                                         className={`w-full text-left px-4 py-3 rounded-lg transition-colors capitalize ${selectedCategory === category.slug.current
-                                                ? "bg-nuziiRoseGold text-white"
-                                                : "hover:bg-nuziiCream text-nuziiText"
+                                            ? "bg-nuziiRoseGold text-white"
+                                            : "hover:bg-nuziiCream text-nuziiText"
                                             }`}
                                     >
                                         {category.title}
@@ -141,8 +142,8 @@ export default function AllProductsSection({
                             transition={{ duration: 0.3 }}
                             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
                         >
-                            {products.map((product: any) => (
-                                <ProductCard key={product._id} product={product as any} />
+                            {products.map((product) => (
+                                <ProductCard key={product._id} product={product} />
                             ))}
                         </motion.div>
                     </AnimatePresence>
