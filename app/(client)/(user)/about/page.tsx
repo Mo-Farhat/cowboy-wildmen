@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Heart, Sparkles, ShieldCheck, Palette, Camera, ShoppingBag, Crown } from "lucide-react";
 
 const differentiators = [
@@ -49,10 +50,11 @@ const AboutPage = () => {
         <div className="grid md:grid-cols-2 min-h-[600px]">
           {/* Left Column - Image */}
           <div className="relative h-[400px] md:h-auto w-full">
-            <img
+            <Image
               src="/images/about-left.png"
               alt="Nuzii Woman"
-              className="absolute inset-0 w-full h-full object-contain"
+              fill
+              className="object-contain"
             />
           </div>
 
@@ -197,7 +199,7 @@ const AboutPage = () => {
 
           <div className="text-center">
             <p className="text-xl md:text-2xl text-white font-light italic opacity-90">
-              "We stand for fashion that lasts longer and feels better."
+              &ldquo;We stand for fashion that lasts longer and feels better.&rdquo;
             </p>
           </div>
         </div>
@@ -220,7 +222,7 @@ const AboutPage = () => {
             href="/shop"
             className="inline-block px-10 py-3 bg-nuziiRoseGold hover:bg-nuziiRoseGoldDark text-white rounded-md text-lg font-medium shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            Browse Our Collection 
+            Browse Our Collection
           </Link>
         </div>
       </section>
