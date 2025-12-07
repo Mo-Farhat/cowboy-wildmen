@@ -9,14 +9,14 @@ import {
   TableRow,
 } from "./ui/table";
 import PriceFormatter from "./PriceFormatter";
-import { MY_ORDERS_QUERYResult } from "@/sanity.types";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
 interface OrderDetailsDialogProps {
-  order: MY_ORDERS_QUERYResult[number] | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  order: any;
   isOpen: boolean;
   onClose: () => void;
 }
@@ -73,7 +73,8 @@ const OrderDetailsDialog: React.FC<OrderDetailsDialogProps> = ({
             </TableRow>
           </TableHeader>
           <TableBody>
-            {order.products?.map((product, index) => (
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {order.products?.map((product: any, index: number) => (
               <TableRow key={index}>
                 <TableCell className="flex items-center gap-2">
                   {product?.product?.images && (

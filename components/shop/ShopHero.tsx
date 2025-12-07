@@ -5,25 +5,10 @@ import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { SHOP_HERO_QUERYResult } from "@/sanity.types";
 
 interface ShopHeroProps {
-    heroes: Array<{
-        _id: string;
-        seasonTitle: string;
-        mainHeading: string;
-        subheading?: string;
-        primaryButtonText?: string;
-        primaryButtonLink?: string;
-        secondaryButtonText?: string;
-        secondaryButtonLink?: string;
-        heroImage: {
-            asset: {
-                _ref: string;
-                _type: string;
-            };
-        };
-        order: number;
-    }>;
+    heroes: SHOP_HERO_QUERYResult;
 }
 
 export default function ShopHero({ heroes }: ShopHeroProps) {
@@ -45,13 +30,15 @@ export default function ShopHero({ heroes }: ShopHeroProps) {
         <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
-                <Image
-                    src={urlFor(currentHero.heroImage).url()}
-                    alt={currentHero.mainHeading}
-                    fill
-                    className="object-cover"
-                    priority
-                />
+                {currentHero.heroImage && (
+                    <Image
+                        src={urlFor(currentHero.heroImage).url()}
+                        alt={currentHero.mainHeading || "Hero image"}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                )}
                 {/* Overlay for better text readability */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
             </div>

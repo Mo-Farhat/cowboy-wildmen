@@ -1,22 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
+import { MID_PAGE_BANNERS_QUERYResult } from "@/sanity.types";
 
 interface MidPageBannersProps {
-    banners: Array<{
-        _id: string;
-        title: string;
-        description?: string;
-        image: {
-            asset: {
-                _ref: string;
-                _type: string;
-            };
-        };
-        ctaText?: string;
-        ctaLink: string;
-        placement: string;
-    }>;
+    banners: MID_PAGE_BANNERS_QUERYResult;
 }
 
 export default function MidPageBanners({ banners }: MidPageBannersProps) {
@@ -30,7 +18,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
             <div className="container mx-auto max-w-7xl">
                 <div className="grid md:grid-cols-2 gap-6">
                     {/* Left Banner */}
-                    {leftBanner && (
+                    {leftBanner && leftBanner.ctaLink && leftBanner.image && (
                         <Link
                             href={leftBanner.ctaLink}
                             className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 min-h-[400px]"
@@ -38,7 +26,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                             <div className="relative w-full h-full">
                                 <Image
                                     src={urlFor(leftBanner.image).url()}
-                                    alt={leftBanner.title}
+                                    alt={leftBanner.title || "Banner"}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                                 />
@@ -65,7 +53,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                     )}
 
                     {/* Right Banner */}
-                    {rightBanner && (
+                    {rightBanner && rightBanner.ctaLink && rightBanner.image && (
                         <Link
                             href={rightBanner.ctaLink}
                             className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 min-h-[400px]"
@@ -73,7 +61,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                             <div className="relative w-full h-full">
                                 <Image
                                     src={urlFor(rightBanner.image).url()}
-                                    alt={rightBanner.title}
+                                    alt={rightBanner.title || "Banner"}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                                 />

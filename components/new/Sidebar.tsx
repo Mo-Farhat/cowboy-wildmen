@@ -7,12 +7,12 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { useOutsideClick } from "@/hooks";
 import SocialMedia from "./SocialMedia";
-import { CATEGORIES_QUERYResult } from "@/sanity.types";
+import { FEATURED_CATEGORIES_QUERYResult } from "@/sanity.types";
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  categories: CATEGORIES_QUERYResult;
+  categories: FEATURED_CATEGORIES_QUERYResult;
 }
 
 
@@ -157,8 +157,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                   onClick={onClose}
                   href="/orders"
                   className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between ${pathname === "/orders"
-                      ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
-                      : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                    ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
+                    : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
                     }`}
                 >
                   My Orders

@@ -1,22 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
+import { PROMO_GRID_BANNERS_QUERYResult } from "@/sanity.types";
 
 interface PromotionalSectionProps {
-    banners: Array<{
-        _id: string;
-        title: string;
-        description?: string;
-        image: {
-            asset: {
-                _ref: string;
-                _type: string;
-            };
-        };
-        ctaText?: string;
-        ctaLink: string;
-        placement: string;
-    }>;
+    banners: PROMO_GRID_BANNERS_QUERYResult;
 }
 
 export default function PromotionalSection({ banners }: PromotionalSectionProps) {
@@ -33,7 +21,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
             <div className="container mx-auto max-w-7xl">
                 <div className="grid lg:grid-cols-2 gap-6">
                     {/* Left Block - Large Banner */}
-                    {leftBanner && (
+                    {leftBanner && leftBanner.ctaLink && leftBanner.image && (
                         <Link
                             href={leftBanner.ctaLink}
                             className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 min-h-[500px]"
@@ -41,7 +29,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                             <div className="relative w-full h-full">
                                 <Image
                                     src={urlFor(leftBanner.image).url()}
-                                    alt={leftBanner.title}
+                                    alt={leftBanner.title || "Promo banner"}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                                 />
@@ -71,7 +59,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                     <div className="grid grid-rows-2 gap-6">
                         {/* Top Row - Two small banners */}
                         <div className="grid grid-cols-2 gap-6">
-                            {topRight1 && (
+                            {topRight1 && topRight1.ctaLink && topRight1.image && (
                                 <Link
                                     href={topRight1.ctaLink}
                                     className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
@@ -79,7 +67,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                     <div className="relative w-full h-full min-h-[240px]">
                                         <Image
                                             src={urlFor(topRight1.image).url()}
-                                            alt={topRight1.title}
+                                            alt={topRight1.title || "Promo banner"}
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
@@ -96,7 +84,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                 </Link>
                             )}
 
-                            {topRight2 && (
+                            {topRight2 && topRight2.ctaLink && topRight2.image && (
                                 <Link
                                     href={topRight2.ctaLink}
                                     className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
@@ -104,7 +92,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                     <div className="relative w-full h-full min-h-[240px]">
                                         <Image
                                             src={urlFor(topRight2.image).url()}
-                                            alt={topRight2.title}
+                                            alt={topRight2.title || "Promo banner"}
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
@@ -123,7 +111,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                         </div>
 
                         {/* Bottom Row - Wide banner */}
-                        {bottomRight && (
+                        {bottomRight && bottomRight.ctaLink && bottomRight.image && (
                             <Link
                                 href={bottomRight.ctaLink}
                                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
@@ -131,7 +119,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                 <div className="relative w-full h-full min-h-[240px]">
                                     <Image
                                         src={urlFor(bottomRight.image).url()}
-                                        alt={bottomRight.title}
+                                        alt={bottomRight.title || "Promo banner"}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                                     />

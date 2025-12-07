@@ -1,4 +1,4 @@
-import { SALE_QUERYResult } from "@/sanity.types";
+
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import React from "react";
@@ -13,7 +13,8 @@ import {
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 
-const DiscountBanner = async ({ sales }: { sales: SALE_QUERYResult }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const DiscountBanner = async ({ sales }: { sales: any[] }) => {
   return (
     <Carousel className="w-full max-w-screen-xl mx-auto mt-10 mb-5">
       <CarouselContent>

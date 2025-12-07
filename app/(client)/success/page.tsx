@@ -6,13 +6,14 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { MY_ORDERS_QUERYResult } from "@/sanity.types";
+
 import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
 import { useAuth } from "@/context/AuthContext";
 
 const SuccessPage = () => {
-  const [orders, setOrders] = useState<MY_ORDERS_QUERYResult>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [orders, setOrders] = useState<any[]>([]);
   const searchParams = useSearchParams();
   const orderNumber = searchParams.get("orderNumber");
   const clearCart = useCartStore((state) => state.resetCart);

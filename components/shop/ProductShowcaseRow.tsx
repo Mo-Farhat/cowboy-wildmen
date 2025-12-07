@@ -1,30 +1,9 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
-import { Product } from "@/sanity.types";
+import { Product, PRODUCT_SHOWCASE_QUERYResult } from "@/sanity.types";
 
 interface ProductShowcaseRowProps {
-    showcases: Array<{
-        _id: string;
-        title: string;
-        subtitle?: string;
-        products: Array<{
-            _id: string;
-            name: string;
-            slug: { current: string };
-            price: number;
-            discount: number;
-            images: Array<{
-                asset: {
-                    _ref: string;
-                    _type: string;
-                };
-            }>;
-            status?: string;
-        }>;
-        backgroundColor?: string;
-        ctaText?: string;
-        ctaLink?: string;
-    }>;
+    showcases: PRODUCT_SHOWCASE_QUERYResult;
 }
 
 const bgColorMap: Record<string, string> = {

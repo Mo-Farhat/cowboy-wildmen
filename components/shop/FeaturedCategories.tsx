@@ -1,20 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
+import { FEATURED_CATEGORIES_QUERYResult } from "@/sanity.types";
 
 interface FeaturedCategoriesProps {
-    categories: Array<{
-        _id: string;
-        title: string;
-        slug: { current: string };
-        description?: string;
-        image?: {
-            asset: {
-                _ref: string;
-                _type: string;
-            };
-        };
-    }>;
+    categories: FEATURED_CATEGORIES_QUERYResult;
 }
 
 export default function FeaturedCategories({ categories }: FeaturedCategoriesProps) {
@@ -38,7 +28,7 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
                     {categories.map((category) => (
                         <Link
                             key={category._id}
-                            href={`/category/${category.slug.current}`}
+                            href={category.slug?.current ? `/category/${category.slug.current}` : '#'}
                             className="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300"
                         >
                             {/* Category Image */}
@@ -46,14 +36,14 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
                                 {category.image ? (
                                     <Image
                                         src={urlFor(category.image).url()}
-                                        alt={category.title}
+                                        alt={category.title || "Category"}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                 ) : (
                                     <div className="w-full h-full bg-gradient-to-br from-nuziiRoseGold/20 to-nuziiSand/40 flex items-center justify-center">
                                         <span className="text-6xl text-nuziiRoseGold/40">
-                                            {category.title.charAt(0)}
+                                            {category.title?.charAt(0) || '?'}
                                         </span>
                                     </div>
                                 )}

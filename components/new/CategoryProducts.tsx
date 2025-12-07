@@ -1,5 +1,5 @@
 "use client";
-import { CATEGORIES_QUERYResult, Product } from "@/sanity.types";
+import { FEATURED_CATEGORIES_QUERYResult, Product } from "@/sanity.types";
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
@@ -9,7 +9,7 @@ import ProductCard from "../ProductCard";
 import NoProductAvailable from "./NoProductAvailable";
 
 interface Props {
-  categories: CATEGORIES_QUERYResult;
+  categories: FEATURED_CATEGORIES_QUERYResult;
   slug: string;
 }
 

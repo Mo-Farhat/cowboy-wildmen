@@ -5,15 +5,11 @@ import { client } from "@/sanity/lib/client";
 import ProductCard from "@/components/ProductCard";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown, Loader2 } from "lucide-react";
+import { FEATURED_CATEGORIES_QUERYResult, ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
 
 interface AllProductsSectionProps {
-    categories: Array<{
-        _id: string;
-        title: string;
-        slug: { current: string };
-    }>;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    initialProducts: any[];
+    categories: FEATURED_CATEGORIES_QUERYResult;
+    initialProducts: ALL_PRODUCTS_QUERYResult;
 }
 
 export default function AllProductsSection({
@@ -57,7 +53,7 @@ export default function AllProductsSection({
     const currentCategoryName =
         selectedCategory === "all"
             ? "All Products"
-            : categories.find((c) => c.slug.current === selectedCategory)?.title ||
+            : categories.find((c) => c.slug?.current === selectedCategory)?.title ||
             "All Products";
 
     return (
@@ -104,14 +100,16 @@ export default function AllProductsSection({
                                 >
                                     All Products
                                 </button>
-                                {categories.map((category) => (
+                                {categories.filter(cat => cat.slug?.current).map((category) => (
                                     <button
                                         key={category._id}
                                         onClick={() => {
-                                            setSelectedCategory(category.slug.current);
-                                            setIsDropdownOpen(false);
+                                            if (category.slug?.current) {
+                                                setSelectedCategory(category.slug.current);
+                                                setIsDropdownOpen(false);
+                                            }
                                         }}
-                                        className={`w-full text-left px-4 py-3 rounded-lg transition-colors capitalize ${selectedCategory === category.slug.current
+                                        className={`w-full text-left px-4 py-3 rounded-lg transition-colors capitalize ${selectedCategory === category.slug?.current
                                             ? "bg-nuziiRoseGold text-white"
                                             : "hover:bg-nuziiCream text-nuziiText"
                                             }`}

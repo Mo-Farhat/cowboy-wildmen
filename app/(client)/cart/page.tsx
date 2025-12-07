@@ -119,7 +119,7 @@ const CartPage = () => {
                                   {product?.name}
                                 </h2>
                                 <p className="text-sm text-lightColor font-medium">
-                                  {product?.intro}
+                                  {product?.variantInfo}
                                 </p>
                                 <p className="text-sm capitalize">
                                   Variant:{" "}

@@ -12,12 +12,12 @@ import { getMyOrders } from "@/sanity/helpers/client";
 import { FileX, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
-import { MY_ORDERS_QUERYResult } from "@/sanity.types";
+import { Order } from "@/sanity.types";
 
 const OrdersPage = () => {
   const { user, loading } = useAuth();
   const router = useRouter();
-  const [orders, setOrders] = useState<MY_ORDERS_QUERYResult>([]);
+  const [orders, setOrders] = useState<Order[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

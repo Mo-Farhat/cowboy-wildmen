@@ -3,28 +3,12 @@
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import { motion, AnimatePresence } from "motion/react";
-import { Product } from "@/sanity.types";
-
-interface ProductLocal {
-    _id: string;
-    name: string;
-    slug: { current: string };
-    price: number;
-    discount: number;
-    images: Array<{
-        asset: {
-            _ref: string;
-            _type: string;
-        };
-    }>;
-    status?: string;
-    rating?: number;
-}
+import { Product, NEW_ARRIVALS_QUERYResult, BEST_SELLING_QUERYResult, TOP_RATED_QUERYResult } from "@/sanity.types";
 
 interface FeaturedProductsProps {
-    newArrivals: ProductLocal[];
-    bestSelling: ProductLocal[];
-    topRated: ProductLocal[];
+    newArrivals: NEW_ARRIVALS_QUERYResult;
+    bestSelling: BEST_SELLING_QUERYResult;
+    topRated: TOP_RATED_QUERYResult;
 }
 
 type TabType = "new" | "best" | "top";

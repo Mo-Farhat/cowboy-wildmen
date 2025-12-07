@@ -2,7 +2,6 @@
 import React, { useCallback, useState } from "react";
 import { TableBody, TableCell, TableRow } from "./ui/table";
 import PriceFormatter from "./PriceFormatter";
-import { MY_ORDERS_QUERYResult } from "@/sanity.types";
 import OrderDetailsDialog from "./OrderDetailsDialog";
 import {
   Tooltip,
@@ -15,13 +14,14 @@ import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
-const OrdersComponent = ({ orders }: { orders: MY_ORDERS_QUERYResult }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const OrdersComponent = ({ orders }: { orders: any[] }) => {
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
-  const [selectedOrder, setSelectedOrder] = useState<
-    MY_ORDERS_QUERYResult[number] | null
-  >(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [selectedOrder, setSelectedOrder] = useState<any>(null);
 
-  const handleOrderClick = (order: MY_ORDERS_QUERYResult[number]) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleOrderClick = (order: any) => {
     setSelectedOrder(order);
   };
   const router = useRouter();
@@ -109,11 +109,10 @@ const OrdersComponent = ({ orders }: { orders: MY_ORDERS_QUERYResult }) => {
                   <TableCell>
                     {order?.status && (
                       <span
-                        className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                          order.status === "paid"
+                        className={`px-2 py-1 rounded-full text-xs font-semibold ${order.status === "paid"
                             ? "bg-green-100 text-green-800"
                             : "bg-yellow-100 text-yellow-800"
-                        }`}
+                          }`}
                       >
                         {order?.status.charAt(0).toUpperCase() +
                           order?.status.slice(1)}

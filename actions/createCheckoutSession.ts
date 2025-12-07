@@ -64,7 +64,7 @@ export async function createCheckoutSession(
           unit_amount: Math.round(item.product.price! * 100), // Convert to cents
           product_data: {
             name: item.product.name || "Unnamed Product",
-            description: item.product.description,
+
             metadata: { id: item.product._id },
             images:
               item.product.images && item.product.images.length > 0

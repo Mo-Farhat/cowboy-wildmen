@@ -122,7 +122,7 @@ const SearchBar = () => {
                             {product.name}
                           </h3>
                           <p className="text-sm text-gray-600 line-clamp-1">
-                            {product?.intro}
+                            {product?.variantInfo}
                           </p>
                         </Link>
                         <PriceView

@@ -3,9 +3,9 @@
 import { AlignLeft } from "lucide-react";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
-import { CATEGORIES_QUERYResult } from "@/sanity.types";
+import { FEATURED_CATEGORIES_QUERYResult } from "@/sanity.types";
 
-const MobileMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
+const MobileMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResult }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);

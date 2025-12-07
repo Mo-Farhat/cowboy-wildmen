@@ -1,10 +1,10 @@
 "use client";
-import { CATEGORIES_QUERYResult, Category } from "@/sanity.types";
+import { FEATURED_CATEGORIES_QUERYResult } from "@/sanity.types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
-const HeaderMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
+const HeaderMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResult }) => {
   const pathname = usePathname();
 
   const isActive = (path: string) => pathname === path;
@@ -38,7 +38,7 @@ const HeaderMenu = ({ categories }: { categories: CATEGORIES_QUERYResult }) => {
             >
               All Products
             </Link>
-            {categories?.map((category: Category) => (
+            {categories?.map((category) => (
               <Link
                 key={category?._id}
                 href={`/category/${category?.slug?.current}`}
