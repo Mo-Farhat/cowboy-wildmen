@@ -15,10 +15,11 @@ body {
 
   /* Nuzii Brand Colors */
   --color-nuziiRoseGold: #E0BFB8;
-  --color-nuziiRoseGoldDark: #C8A6A0;
-  --color-nuziiBeige: #F5F1EA;
-  --color-nuziiCream: #FDFBF7;
-  --color-nuziiSand: #D8CFC4;
+  --color-nuziiRoseGoldDark: #c8a19c;
+  /* Replaced beige tones with shades derived from #c8a19c */
+  --color-nuziiBeige: #F2E6E5;
+  --color-nuziiCream: #FBF6F6;
+  --color-nuziiSand: #E5CBCA;
   --color-nuziiText: #4A4A4A;
   --color-nuziiTextLight: #8A8A8A;
 }

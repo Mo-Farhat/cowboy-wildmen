@@ -5,7 +5,7 @@ const ContactPage = () => {
   return (
     <div className="w-full">
       {/* Section 1: Simple Contact Intro */}
-      <section className="relative w-full py-20 md:py-28 bg-gradient-to-br from-nuziiBeige via-nuziiCream to-nuziiBeige overflow-hidden">
+      <section className="relative w-full py-20 md:py-28 bg-gradient-to-br from-nuziiSand via-nuziiBeige to-nuziiSand overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-20 right-10 w-64 h-64 bg-nuziiRoseGold/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-80 h-80 bg-nuziiRoseGoldDark/10 rounded-full blur-3xl" />
@@ -37,7 +37,7 @@ const ContactPage = () => {
       {/* Section 2: Contact Form */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-2xl">
-          <div className="bg-nuziiCream/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-nuziiRoseGold/10 shadow-lg">
+          <div className="bg-nuziiBeige/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-nuziiRoseGold/20 shadow-lg">
             <form className="space-y-6">
               {/* Name Field */}
               <div className="space-y-2">
@@ -51,7 +51,7 @@ const ContactPage = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-5 py-4 bg-white border border-nuziiSand/50 rounded-2xl text-nuziiText placeholder-nuziiTextLight/50 focus:outline-none focus:ring-2 focus:ring-nuziiRoseGold/50 focus:border-nuziiRoseGold transition-all duration-300"
+                  className="w-full px-5 py-4 bg-white border border-nuziiRoseGoldDark/30 rounded-2xl text-nuziiText placeholder-nuziiTextLight/50 focus:outline-none focus:ring-2 focus:ring-nuziiRoseGold/50 focus:border-nuziiRoseGold transition-all duration-300"
                   placeholder="Your name"
                   required
                 />
@@ -69,7 +69,7 @@ const ContactPage = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-5 py-4 bg-white border border-nuziiSand/50 rounded-2xl text-nuziiText placeholder-nuziiTextLight/50 focus:outline-none focus:ring-2 focus:ring-nuziiRoseGold/50 focus:border-nuziiRoseGold transition-all duration-300"
+                  className="w-full px-5 py-4 bg-white border border-nuziiRoseGoldDark/30 rounded-2xl text-nuziiText placeholder-nuziiTextLight/50 focus:outline-none focus:ring-2 focus:ring-nuziiRoseGold/50 focus:border-nuziiRoseGold transition-all duration-300"
                   placeholder="your.email@example.com"
                   required
                 />
@@ -87,7 +87,7 @@ const ContactPage = () => {
                   id="message"
                   name="message"
                   rows={6}
-                  className="w-full px-5 py-4 bg-white border border-nuziiSand/50 rounded-2xl text-nuziiText placeholder-nuziiTextLight/50 focus:outline-none focus:ring-2 focus:ring-nuziiRoseGold/50 focus:border-nuziiRoseGold transition-all duration-300 resize-none"
+                  className="w-full px-5 py-4 bg-white border border-nuziiRoseGoldDark/30 rounded-2xl text-nuziiText placeholder-nuziiTextLight/50 focus:outline-none focus:ring-2 focus:ring-nuziiRoseGold/50 focus:border-nuziiRoseGold transition-all duration-300 resize-none"
                   placeholder="Tell us how we can help..."
                   required
                 />

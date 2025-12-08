@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function FooterCTA() {
     return (
-        <section className="py-24 bg-nuziiRoseGold/10">
+        <section className="py-24 bg-nuziiBeige">
             <div className="container mx-auto px-4 text-center">
                 <h2 className="text-4xl md:text-5xl font-light text-nuziiText mb-6">
                     Join the Nuzii community.
