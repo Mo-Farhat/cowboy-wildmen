@@ -106,6 +106,28 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Section 1.5: Brand Story */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl text-center">
+          <h2 className="text-3xl md:text-5xl font-light text-[#6B514B] mb-8">
+            Brand Story: Nuzi.co
+          </h2>
+          <div className="w-24 h-[1px] bg-nuziiRoseGold mx-auto mb-10" />
+          
+          <div className="space-y-6 text-lg text-[#6B514B]/80 font-light leading-relaxed">
+            <p>
+              Nuzi.co was born from a heartfelt dream shared with my husband to create a brand inspired by my name, Nushath. It was his long-held wish to see something meaningful and lasting grow from that name, and today, that dream has gracefully come to life.
+            </p>
+            <p>
+              NUZI.CO embodies elegance, confidence, and modest beauty through thoughtfully designed shawls, bags, jewelry, and feminine essentials. Each piece reflects our vision of simplicity, grace, and timeless fashion.
+            </p>
+            <p>
+              What began as a personal dream has blossomed into a brand that celebrates every woman’s unique elegance – where true beauty shines through confidence and authenticity.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Section 2: Our Mission */}
       <section className="py-24 bg-nuziiCream">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
