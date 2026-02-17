@@ -52,11 +52,11 @@ const AddToCartButton = ({ product, className }: Props) => {
           }}
           disabled={isOutOfStock}
           className={cn(
-            "w-full bg-brandAmber text-black font-black uppercase tracking-[0.2em] text-xs h-full rounded-sm hover:bg-white transition-all duration-300",
+            "brand-button brand-button-primary w-full h-full text-xs",
             className
           )}
         >
-          {isOutOfStock ? "Depleted" : "Secure Gear"}
+          {isOutOfStock ? "Depleted" : "Add to Cart"}
         </Button>
       )}
     </div>

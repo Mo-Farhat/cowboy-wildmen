@@ -3,10 +3,10 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const newArrivals = [
-    { id: 1, name: "Viscose Geometric Shirt", price: "$85.00", tag: "New Drop", image: "/images/western_chic_patterned_shirt.png" },
-    { id: 2, name: "Premium Lace Button-Down", price: "$95.00", tag: "Hot", image: "/images/western_chic_party_wear_lace.png" },
-    { id: 3, name: "Midnight Varsity Jacket", price: "$150.00", tag: "Restocked", image: "/images/western_chic_varsity_jacket.png" },
-    { id: 4, name: "Slim Fit Western Trouser", price: "$110.00", tag: "Trending", image: "/images/western_chic_pants_stylish.png" },
+    { id: 1, name: "Viscose Geometric Shirt", price: "LKR 85", tag: "New Drop", image: "/images/western_chic_patterned_shirt.png" },
+    { id: 2, name: "Premium Lace Button-Down", price: "LKR 95", tag: "Hot", image: "/images/western_chic_party_wear_lace.png" },
+    { id: 3, name: "Midnight Varsity Jacket", price: "LKR 150", tag: "Restocked", image: "/images/western_chic_varsity_jacket.png" },
+    { id: 4, name: "Slim Fit Western Trouser", price: "LKR 110", tag: "Trending", image: "/images/western_chic_pants_stylish.png" },
 ];
 
 export default function NewArrivals() {
@@ -45,6 +45,9 @@ export default function NewArrivals() {
                                 <h3 className="text-xl font-black text-white uppercase tracking-tight group-hover:text-brandAmber transition-colors">
                                     {product.name}
                                 </h3>
+                                <button className="brand-button brand-button-primary w-full text-[10px] py-4">
+                                    Add to Cart
+                                </button>
                                 <p className="text-zinc-500 font-black tracking-widest text-xs">{product.price}</p>
                             </div>
                         </div>

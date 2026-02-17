@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Eye, ShoppingBag } from "lucide-react";
 
 const products = [
-    { id: 1, name: "Essential Premium Polo", price: "$65.00", category: "Tops", image: "/images/western_chic_polo_fitted.png" },
-    { id: 2, name: "Structured Crew Neck", price: "$75.00", category: "Essentials", image: "/images/western_chic_sweatshirt_premium.png" },
-    { id: 3, name: "Tailored Western Pant", price: "$105.00", category: "Bottoms", image: "/images/western_chic_pants_stylish.png" },
-    { id: 4, name: "Statement Party Shirt", price: "$90.00", category: "Night Edit", image: "/images/western_chic_patterned_shirt.png" },
+    { id: 1, name: "Viscose Geometric Shirt", price: "LKR 85", category: "Designer Shirts", image: "/images/western_chic_patterned_shirt.png" },
+    { id: 2, name: "Premium Lace Button-Down", price: "LKR 95", category: "Party Wear", image: "/images/western_chic_party_wear_lace.png" },
+    { id: 3, name: "Midnight Varsity Jacket", price: "LKR 150", category: "Outerwear", image: "/images/western_chic_varsity_jacket.png" },
+    { id: 4, name: "Statement Party Shirt", price: "LKR 90", category: "Night Edit", image: "/images/western_chic_patterned_shirt.png" },
 ];
 
 export default function BestSellers() {
@@ -46,11 +46,11 @@ export default function BestSellers() {
 
                                 {/* Quick Actions */}
                                 <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                                    <button className="p-4 bg-white text-black hover:bg-brandAmber transition-colors" aria-label="Quick View">
-                                        <Eye className="w-5 h-5 font-black" />
+                                    <button className="p-3 bg-white text-black border border-transparent hover:bg-black hover:text-white hover:border-white transition-all duration-300" aria-label="Quick View">
+                                        <Eye className="w-4 h-4" />
                                     </button>
-                                    <button className="p-4 bg-white text-black hover:bg-brandAmber transition-colors" aria-label="Add to Cart">
-                                        <ShoppingBag className="w-5 h-5" />
+                                    <button className="p-3 bg-brandAmber text-black border border-transparent hover:bg-black hover:text-brandAmber hover:border-brandAmber transition-all duration-300" aria-label="Add to Cart">
+                                        <ShoppingBag className="w-4 h-4" />
                                     </button>
                                 </div>
                             </div>

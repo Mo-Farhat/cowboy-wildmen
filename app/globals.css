@@ -150,7 +150,7 @@ h6 {
 }
 
 .brand-button-primary {
-  @apply bg-brandAmber text-black hover:bg-white;
+  @apply bg-brandAmber text-black border border-transparent hover:bg-black hover:text-brandAmber hover:border-brandAmber;
 }
 
 .brand-button-outline {
