@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/50 z-50 backdrop-blur-sm xl:hidden"
+            className="fixed inset-0 bg-black/80 z-50 backdrop-blur-md xl:hidden"
           />
 
           {/* Sidebar */}
@@ -49,45 +49,45 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             ref={sidebarRef}
-            className="fixed inset-y-0 left-0 z-50 w-[80%] max-w-sm bg-white shadow-2xl xl:hidden overflow-y-auto"
+            className="fixed inset-y-0 left-0 z-50 w-[85%] max-w-sm bg-black border-r border-white/5 shadow-2xl xl:hidden overflow-y-auto"
           >
             <div className="flex flex-col h-full">
               {/* Header */}
-              <div className="p-6 flex items-center justify-between border-b border-nuziiRoseGold/20">
+              <div className="p-8 flex items-center justify-between border-b border-white/5">
                 <Logo className="w-24" />
                 <button
                   onClick={onClose}
-                  className="p-2 text-nuziiText hover:text-nuziiRoseGoldDark transition-colors rounded-full hover:bg-nuziiCream"
+                  className="p-3 text-zinc-500 hover:text-brandAmber transition-colors rounded-full hover:bg-white/5"
                 >
                   <X className="w-6 h-6" />
                 </button>
               </div>
 
               {/* Navigation Links */}
-              <div className="flex-1 py-6 px-4 flex flex-col gap-2">
+              <div className="flex-1 py-8 px-6 flex flex-col gap-3">
                 <Link
                   onClick={onClose}
                   href="/"
-                  className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between ${pathname === "/"
-                    ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
-                    : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                  className={`px-4 py-4 rounded-sm text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-between ${pathname === "/"
+                    ? "bg-white/5 text-brandAmber border-l-2 border-brandAmber"
+                    : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                     }`}
                 >
-                  Home
+                  Frontier
                 </Link>
 
                 {/* Shop Accordion */}
                 <div className="flex flex-col">
                   <button
                     onClick={() => setIsShopOpen(!isShopOpen)}
-                    className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between w-full ${pathname.startsWith("/shop") || pathname.startsWith("/category")
-                      ? "text-nuziiRoseGoldDark"
-                      : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                    className={`px-4 py-4 rounded-sm text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-between w-full ${pathname.startsWith("/shop") || pathname.startsWith("/category")
+                      ? "text-brandAmber"
+                      : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                       }`}
                   >
-                    <span>Shop</span>
+                    <span>Gear</span>
                     <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${isShopOpen ? "rotate-180" : ""
+                      className={`w-4 h-4 transition-transform duration-300 ${isShopOpen ? "rotate-180" : ""
                         }`}
                     />
                   </button>
@@ -99,27 +99,27 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="overflow-hidden pl-4"
+                        className="overflow-hidden"
                       >
-                        <div className="pl-4 border-l-2 border-nuziiRoseGold/20 flex flex-col gap-1 py-2">
+                        <div className="pl-6 border-l border-white/5 flex flex-col gap-2 py-4">
                           <Link
                             onClick={onClose}
                             href="/shop"
-                            className={`px-4 py-2 rounded-lg text-base transition-colors flex items-center gap-2 ${pathname === "/shop"
-                              ? "text-nuziiRoseGoldDark font-medium"
-                              : "text-nuziiTextLight hover:text-nuziiRoseGoldDark"
+                            className={`px-4 py-2 text-[10px] uppercase font-black tracking-widest transition-colors flex items-center gap-2 ${pathname === "/shop"
+                              ? "text-brandAmber"
+                              : "text-zinc-600 hover:text-white"
                               }`}
                           >
-                            All Products
+                            All Provisions
                           </Link>
                           {categories?.map((item) => (
                             <Link
                               onClick={onClose}
                               key={item?.title}
                               href={`/category/${item?.slug?.current}`}
-                              className={`px-4 py-2 rounded-lg text-base transition-colors flex items-center gap-2 capitalize ${pathname === `/category/${item?.slug?.current}`
-                                ? "text-nuziiRoseGoldDark font-medium"
-                                : "text-nuziiTextLight hover:text-nuziiRoseGoldDark"
+                              className={`px-4 py-2 text-[10px] uppercase font-black tracking-widest transition-colors flex items-center gap-2 ${pathname === `/category/${item?.slug?.current}`
+                                ? "text-brandAmber"
+                                : "text-zinc-600 hover:text-white"
                                 }`}
                             >
                               {item?.title}
@@ -134,42 +134,42 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                 <Link
                   onClick={onClose}
                   href="/about"
-                  className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between ${pathname === "/about"
-                    ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
-                    : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                  className={`px-4 py-4 rounded-sm text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-between ${pathname === "/about"
+                    ? "bg-white/5 text-brandAmber border-l-2 border-brandAmber"
+                    : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                     }`}
                 >
-                  About
+                  Chronicles
                 </Link>
 
                 <Link
                   onClick={onClose}
                   href="/contact"
-                  className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between ${pathname === "/contact"
-                    ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
-                    : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                  className={`px-4 py-4 rounded-sm text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-between ${pathname === "/contact"
+                    ? "bg-white/5 text-brandAmber border-l-2 border-brandAmber"
+                    : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                     }`}
                 >
-                  Contact
+                  Signal
                 </Link>
 
                 <Link
                   onClick={onClose}
                   href="/orders"
-                  className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 flex items-center justify-between ${pathname === "/orders"
-                    ? "bg-nuziiRoseGold/10 text-nuziiRoseGoldDark"
-                    : "text-nuziiText hover:bg-nuziiCream hover:text-nuziiRoseGoldDark"
+                  className={`px-4 py-4 rounded-sm text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-between ${pathname === "/orders"
+                    ? "bg-white/5 text-brandAmber border-l-2 border-brandAmber"
+                    : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                     }`}
                 >
-                  My Orders
+                  My Transmissions
                 </Link>
               </div>
 
               {/* Footer */}
-              <div className="p-6 border-t border-nuziiRoseGold/20 bg-nuziiCream/30">
+              <div className="p-8 border-t border-white/5 bg-brandCharcoal/50">
                 <SocialMedia />
-                <p className="text-center text-xs text-nuziiTextLight mt-4">
-                  © {new Date().getFullYear()} NUZII. All rights reserved.
+                <p className="text-center text-[10px] font-black uppercase tracking-widest text-zinc-700 mt-6">
+                  © {new Date().getFullYear()} COWBOY WILDMEN.
                 </p>
               </div>
             </div>

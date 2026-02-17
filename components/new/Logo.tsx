@@ -10,15 +10,10 @@ interface Props {
 const Logo = ({ className }: Props) => {
   return (
     <Link href={"/"}>
-      <div className={cn("relative w-24 h-auto", className)}>
-        <Image
-          src="/images/nuzi-logo.png"
-          alt="Nuzii Logo"
-          width={96}
-          height={40}
-          className="w-full h-full object-contain"
-          priority
-        />
+      <div className={cn("inline-block", className)}>
+        <span className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter hover:text-brandAmber transition-colors">
+            COWBOY<br className="md:hidden" /> WILDMEN
+        </span>
       </div>
     </Link>
   );

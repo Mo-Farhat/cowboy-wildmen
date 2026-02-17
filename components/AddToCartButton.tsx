@@ -20,10 +20,6 @@ const AddToCartButton = ({ product, className }: Props) => {
   const itemCount = getItemCount(product?._id);
   const isOutOfStock = product?.stock === 0;
 
-  // Use useEffect to set isClient to true after component mounts
-  // This ensures that the component only renders on the client-side
-  // Preventing hydration errors due to server/client mismatch
-
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -31,17 +27,18 @@ const AddToCartButton = ({ product, className }: Props) => {
     return null;
   }
   return (
-    <div className="w-full h-12 flex items-center">
+    <div className="w-full h-14 flex items-center">
       {itemCount ? (
-        <div className="text-sm w-full">
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-muted-foreground">Quantity</span>
+        <div className="text-sm w-full bg-black/40 p-4 border border-white/5">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">In Saddle</span>
             <QuantityButtons product={product} />
           </div>
-          <div className="flex items-center justify-between border-t pt-1">
-            <span className="text-xs font-semibold">Subtotal</span>
+          <div className="flex items-center justify-between border-t border-white/5 pt-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-white">Total</span>
             <PriceFormatter
               amount={product?.price ? product.price * itemCount : 0}
+              className="font-black text-brandAmber"
             />
           </div>
         </div>
@@ -55,11 +52,11 @@ const AddToCartButton = ({ product, className }: Props) => {
           }}
           disabled={isOutOfStock}
           className={cn(
-            "w-full bg-transparent text-darkColor shadow-none border border-darkColor/30 font-semibold tracking-wide hover:text-white cursor-pointer hoverEffect",
+            "w-full bg-brandAmber text-black font-black uppercase tracking-[0.2em] text-xs h-full rounded-sm hover:bg-white transition-all duration-300",
             className
           )}
         >
-          Add to cart
+          {isOutOfStock ? "Depleted" : "Secure Gear"}
         </Button>
       )}
     </div>

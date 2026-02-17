@@ -26,134 +26,98 @@ const ProductPage = async ({
   }
 
   return (
-    <div>
-      <Container className="flex flex-col md:flex-row gap-10 py-10">
-        {product?.images && <ImageView images={product?.images} />}
-        <div className="w-full md:w-1/2 flex flex-col gap-5">
-          <div>
-            <p className="text-4xl font-bold mb-2">{product?.name}</p>
-            <PriceView
-              price={product?.price}
-              discount={product?.discount}
-              className="text-lg font-bold"
-            />
+    <div className="bg-black min-h-screen text-white">
+      <Container className="flex flex-col md:flex-row gap-10 lg:gap-20 py-16">
+        {product?.images && (
+            <div className="w-full md:w-1/2">
+                <ImageView images={product?.images} />
+            </div>
+        )}
+        <div className="w-full md:w-1/2 flex flex-col gap-8">
+          <div className="space-y-4">
+             <span className="text-brandAmber font-black uppercase tracking-[0.3em] text-[10px]">Premium Grade Gear</span>
+             <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">{product?.name}</h1>
+             <PriceView
+                price={product?.price}
+                discount={product?.discount}
+                className="text-2xl font-black text-white"
+             />
           </div>
+
           {product?.stock && (
-            <p className="bg-green-100 w-24 text-center text-green-600 text-sm py-2.5 font-semibold rounded-lg">
-              In Stock
-            </p>
+            <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-brandAmber animate-pulse" />
+                <p className="text-[10px] font-black uppercase tracking-widest text-brandAmber">
+                  Available in Stock
+                </p>
+            </div>
           )}
 
           {product?.description && (
-            <div className="text-sm text-gray-600 tracking-wide prose prose-sm max-w-none">
+            <div className="text-zinc-400 font-medium leading-relaxed max-w-xl border-t border-white/5 pt-8">
               <PortableText
                 value={product.description}
                 components={{
                   block: {
                     normal: ({ children }) => (
-                      <p className="mb-3 leading-relaxed">{children}</p>
+                      <p className="mb-4">{children}</p>
                     ),
                     h1: ({ children }) => (
-                      <h1 className="text-2xl font-bold mb-3 text-gray-800">
+                      <h1 className="text-2xl font-black uppercase mb-4 text-white">
                         {children}
                       </h1>
                     ),
                     h2: ({ children }) => (
-                      <h2 className="text-xl font-bold mb-2 text-gray-800">
+                      <h2 className="text-xl font-black uppercase mb-3 text-white">
                         {children}
                       </h2>
-                    ),
-                    h3: ({ children }) => (
-                      <h3 className="text-lg font-semibold mb-2 text-gray-800">
-                        {children}
-                      </h3>
-                    ),
-                    h4: ({ children }) => (
-                      <h4 className="text-base font-semibold mb-2 text-gray-800">
-                        {children}
-                      </h4>
-                    ),
-                    blockquote: ({ children }) => (
-                      <blockquote className="border-l-4 border-gray-300 pl-4 italic my-3">
-                        {children}
-                      </blockquote>
                     ),
                   },
                   list: {
                     bullet: ({ children }) => (
-                      <ul className="list-disc list-inside mb-3 space-y-1">
+                      <ul className="space-y-2 mb-4">
                         {children}
                       </ul>
                     ),
                   },
                   listItem: {
                     bullet: ({ children }) => (
-                      <li className="ml-2">{children}</li>
-                    ),
-                  },
-                  marks: {
-                    strong: ({ children }) => (
-                      <strong className="font-bold text-gray-800">
-                        {children}
-                      </strong>
-                    ),
-                    em: ({ children }) => <em className="italic">{children}</em>,
-                    link: ({ children, value }) => (
-                      <a
-                        href={value?.href}
-                        className="text-blue-600 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {children}
-                      </a>
+                      <li className="flex items-start gap-3">
+                         <span className="text-brandAmber mt-1.5">•</span>
+                         <span>{children}</span>
+                      </li>
                     ),
                   },
                 }}
               />
             </div>
           )}
-          <div className="flex items-center gap-2.5 lg:gap-5">
-            <AddToCartButton
-              product={product}
-              className="bg-darkColor/80 text-white hover:bg-darkColor hoverEffect"
-            />
-            <button className="border-2 border-darkColor/30 text-darkColor/60 px-2.5 py-1.5 rounded-md hover:text-darkColor hover:border-darkColor hoverEffect">
-              <Heart className="w-5 h-5" />
-            </button>
+          
+          <div className="flex flex-col gap-4 border-t border-white/5 pt-8">
+            <div className="flex items-center gap-4">
+                <AddToCartButton
+                    product={product}
+                    className="brand-button brand-button-primary flex-1 py-4"
+                />
+                <button className="p-4 border-2 border-white/10 hover:border-brandAmber transition-colors group">
+                    <Heart className="w-6 h-6 group-hover:fill-brandAmber group-hover:text-brandAmber transition-all" />
+                </button>
+            </div>
+            <p className="text-[10px] font-black uppercase tracking-widest text-zinc-600 text-center">
+                Limited Drop — Once it's gone, it's gone for good.
+            </p>
           </div>
-          <ProductCharacteristics product={product} />
-          <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-b-gray-200 py-5 -mt-2">
 
-            <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
-              <FaRegQuestionCircle className="text-lg" />
-              <p>Ask a question</p>
+          <ProductCharacteristics product={product} />
+
+          <div className="grid grid-cols-2 gap-4 border-t border-white/5 pt-8">
+            <div className="p-6 bg-brandCharcoal/50 border border-white/5 space-y-2">
+              <p className="text-xs font-black uppercase tracking-widest text-brandAmber">Heavyweight Build</p>
+              <p className="text-sm text-zinc-500 font-medium">Dense fabrics built for durability and character.</p>
             </div>
-            <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
-              <TbTruckDelivery className="text-lg" />
-              <p>Delivery & Return</p>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
-              <FiShare2 className="text-lg" />
-              <p>Share</p>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center gap-5">
-            <div className="border border-darkBlue/20 text-center p-3 hover:border-darkBlue hoverEffect rounded-md">
-              <p className="text-base font-semibold text-black">
-                Free Shipping
-              </p>
-              <p className="text-sm text-gray-500">
-                Free shipping over order $120
-              </p>
-            </div>
-            <div className="border border-darkBlue/20 text-center p-3 hover:border-darkBlue hoverEffect rounded-md">
-              <p className="text-base font-semibold text-black">
-                Flexible Payment
-              </p>
-              <p className="text-sm text-gray-500">
-                Pay with Multiple Credit Cards
-              </p>
+            <div className="p-6 bg-brandCharcoal/50 border border-white/5 space-y-2">
+              <p className="text-xs font-black uppercase tracking-widest text-brandAmber">Expedited Transit</p>
+              <p className="text-sm text-zinc-500 font-medium">Tracked shipping on all global transmissions.</p>
             </div>
           </div>
         </div>

@@ -7,10 +7,10 @@ interface ProductShowcaseRowProps {
 }
 
 const bgColorMap: Record<string, string> = {
-    "rose-gold": "bg-nuziiRoseGold/10",
-    beige: "bg-nuziiBeige",
-    cream: "bg-nuziiCream",
-    sand: "bg-nuziiSand/20",
+    "rose-gold": "bg-brandAmber/10",
+    beige: "bg-black",
+    cream: "bg-brandCharcoal",
+    sand: "bg-zinc-800/20",
     white: "bg-white",
 };
 
@@ -20,7 +20,7 @@ export default function ProductShowcaseRow({ showcases }: ProductShowcaseRowProp
     return (
         <div className="space-y-16 py-12">
             {showcases.map((showcase) => {
-                const bgClass = bgColorMap[showcase.backgroundColor || "cream"] || "bg-nuziiCream";
+                const bgClass = bgColorMap[showcase.backgroundColor || "cream"] || "bg-brandCharcoal";
 
                 return (
                     <section
@@ -30,11 +30,11 @@ export default function ProductShowcaseRow({ showcases }: ProductShowcaseRowProp
                         <div className="container mx-auto max-w-7xl">
                             {/* Section Header */}
                             <div className="text-center mb-10">
-                                <h2 className="text-3xl md:text-4xl font-light text-nuziiText mb-2">
+                                <h2 className="text-3xl md:text-4xl font-light text-white mb-2">
                                     {showcase.title}
                                 </h2>
                                 {showcase.subtitle && (
-                                    <p className="text-lg text-nuziiTextLight font-light">
+                                    <p className="text-lg text-zinc-500 font-light">
                                         {showcase.subtitle}
                                     </p>
                                 )}
@@ -52,7 +52,7 @@ export default function ProductShowcaseRow({ showcases }: ProductShowcaseRowProp
                                 <div className="text-center pt-4">
                                     <Link
                                         href={showcase.ctaLink}
-                                        className="inline-flex items-center gap-2 px-8 py-3 bg-nuziiRoseGold hover:bg-nuziiRoseGoldDark text-white rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                                        className="inline-flex items-center gap-2 px-8 py-3 bg-brandAmber hover:bg-brandAmber text-white rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
                                     >
                                         {showcase.ctaText}
                                     </Link>

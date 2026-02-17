@@ -20,7 +20,7 @@ const UserMenu = () => {
         return (
             <Link
                 href="/signin"
-                className="text-nuziiText hover:text-nuziiRoseGoldDark transition-colors"
+                className="text-white hover:text-brandAmber transition-colors"
             >
                 <User className="w-5 h-5" />
             </Link>
@@ -30,7 +30,7 @@ const UserMenu = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger className="outline-none">
-                <div className="w-8 h-8 rounded-full border border-nuziiRoseGold/30 overflow-hidden relative">
+                <div className="w-9 h-9 rounded-sm border-2 border-white/10 overflow-hidden relative hover:border-brandAmber transition-colors">
                     {user.photoURL ? (
                         <Image
                             src={user.photoURL}
@@ -39,32 +39,33 @@ const UserMenu = () => {
                             className="object-cover"
                         />
                     ) : (
-                        <div className="w-full h-full bg-nuziiRoseGold/10 flex items-center justify-center text-nuziiRoseGoldDark font-medium">
+                        <div className="w-full h-full bg-brandCharcoal flex items-center justify-center text-brandAmber text-xs font-black uppercase">
                             {user.displayName?.charAt(0) || user.email?.charAt(0)}
                         </div>
                     )}
                 </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56 bg-white border-nuziiSand">
-                <DropdownMenuLabel className="font-normal">
+            <DropdownMenuContent align="end" className="w-64 bg-brandCharcoal border-white/5 p-2 shadow-2xl backdrop-blur-xl">
+                <DropdownMenuLabel className="p-4">
                     <div className="flex flex-col space-y-1">
-                        <p className="text-sm font-medium leading-none text-nuziiText">
-                            {user.displayName}
+                        <p className="text-[10px] font-black uppercase tracking-widest text-white">
+                            {user.displayName || "Frontier Member"}
                         </p>
-                        <p className="text-xs leading-none text-nuziiTextLight">
+                        <p className="text-[9px] font-black uppercase tracking-widest text-zinc-500">
                             {user.email}
                         </p>
                     </div>
                 </DropdownMenuLabel>
-                <DropdownMenuSeparator className="bg-nuziiSand/50" />
-                <DropdownMenuItem asChild className="cursor-pointer focus:bg-nuziiCream focus:text-nuziiRoseGoldDark">
-                    <Link href="/orders">My Orders</Link>
+                <DropdownMenuSeparator className="bg-white/5 mx-2" />
+                <DropdownMenuItem asChild className="p-3 cursor-pointer focus:bg-white/5 focus:text-brandAmber text-zinc-400 font-black uppercase tracking-widest text-[10px] transition-all">
+                    <Link href="/orders">My Transmissions</Link>
                 </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-white/5 mx-2" />
                 <DropdownMenuItem
                     onClick={logout}
-                    className="cursor-pointer text-red-500 focus:bg-red-50 focus:text-red-600"
+                    className="p-3 cursor-pointer text-red-500/80 focus:bg-red-500/10 focus:text-red-500 font-black uppercase tracking-widest text-[10px] transition-all"
                 >
-                    Log out
+                    Abandon Session
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

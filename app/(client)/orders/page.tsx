@@ -47,7 +47,7 @@ const OrdersPage = () => {
   if (loading || isLoading) {
     return (
       <Container className="py-10 flex items-center justify-center min-h-[50vh]">
-        <Loader2 className="w-8 h-8 animate-spin text-nuziiRoseGold" />
+        <Loader2 className="w-8 h-8 animate-spin text-brandAmber" />
       </Container>
     );
   }

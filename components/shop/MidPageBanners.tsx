@@ -43,7 +43,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                                         </p>
                                     )}
                                     {leftBanner.ctaText && (
-                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-nuziiRoseGold hover:bg-nuziiRoseGoldDark rounded-full transition-colors">
+                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-brandAmber hover:bg-white text-black font-black uppercase tracking-widest transition-colors">
                                             {leftBanner.ctaText}
                                         </span>
                                     )}
@@ -78,7 +78,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                                         </p>
                                     )}
                                     {rightBanner.ctaText && (
-                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-nuziiRoseGold hover:bg-nuziiRoseGoldDark rounded-full transition-colors">
+                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-brandAmber hover:bg-white text-black font-black uppercase tracking-widest transition-colors">
                                             {rightBanner.ctaText}
                                         </span>
                                     )}

@@ -20,7 +20,7 @@ const Header = async () => {
   const categories = await getAllCategories(3);
 
   return (
-    <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-nuziiRoseGold/20 py-4 transition-all duration-300">
+    <header className="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/5 py-4 transition-all duration-300">
       <Container className="flex items-center justify-between gap-4">
         {/* Left: Navigation Menu */}
         <div className="hidden xl:block w-1/3">
@@ -34,7 +34,9 @@ const Header = async () => {
 
         {/* Center: Logo */}
         <div className="w-1/3 flex justify-center">
-          <Logo className="w-28 -mt-1.5 xl:mt-0" />
+            <Link href="/" className="text-2xl font-black text-white uppercase tracking-tighter hover:text-brandAmber transition-colors">
+                COWBOY WILDMEN
+            </Link>
         </div>
 
         {/* Right: Utility Icons */}
@@ -43,10 +45,10 @@ const Header = async () => {
 
           <CartIcon />
 
-          <Link href={"/orders"} className="hidden md:block group relative text-nuziiText hover:text-nuziiRoseGoldDark transition-colors">
+          <Link href={"/orders"} className="hidden md:block group relative text-white hover:text-brandAmber transition-colors">
             <ListOrdered className="w-5 h-5" />
             {orders && orders.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-nuziiRoseGold text-white h-4 w-4 rounded-full text-[10px] font-medium flex items-center justify-center">
+              <span className="absolute -top-2 -right-2 bg-brandAmber text-black h-4 w-4 rounded-full text-[10px] font-black flex items-center justify-center">
                 {orders.length}
               </span>
             )}

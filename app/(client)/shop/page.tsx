@@ -43,7 +43,7 @@ const ShopPage = async () => {
   ]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <ShopHero heroes={heroes} />
 

@@ -10,12 +10,12 @@ const PriceView = ({ price, discount, className }: Props) => {
   return (
     <div className="flex items-center justify-between gap-5">
       <div className="flex items-center gap-2">
-        <PriceFormatter amount={price} className={className} />
+        <PriceFormatter amount={price} className={twMerge("font-black tracking-widest", className)} />
         {price && discount && (
           <PriceFormatter
             amount={price + (discount * price) / 100}
             className={twMerge(
-              "line-through text-xs font-medium text-zinc-500",
+              "line-through text-xs font-black text-zinc-600 tracking-tighter",
               className
             )}
           />

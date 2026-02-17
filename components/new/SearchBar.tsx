@@ -57,50 +57,52 @@ const SearchBar = () => {
         onClick={() => setShowSearch(!showSearch)}
         className="flex items-center hover:cursor-pointer"
       >
-        <Search className="w-5 h-5 hover:text-darkColor hoverEffect" />
+        <Search className="w-5 h-5 text-white hover:text-brandAmber transition-colors" />
       </DialogTrigger>
-      <DialogContent className="max-w-5xl min-h-[90vh] max-h-[90vh] flex flex-col overflow-hidden bg-white">
+      <DialogContent className="max-w-5xl min-h-[90vh] max-h-[90vh] flex flex-col overflow-hidden bg-brandCharcoal border-white/5">
         <DialogHeader>
-          <DialogTitle className="mb-3">Product Searchbar</DialogTitle>
+          <DialogTitle className="mb-6 text-4xl font-black text-white uppercase tracking-tighter">Inventory Search</DialogTitle>
           <form className="relative" onSubmit={(e) => e.preventDefault()}>
             <Input
-              placeholder="Search your product here..."
-              className="flex-1 rounded-md py-5 font-semibold"
+              placeholder="IDENTIFY GEAR (SHIRTS, JACKETS, ETC...)"
+              className="flex-1 bg-black border-white/10 rounded-sm py-8 font-black uppercase tracking-widest text-xs focus-visible:ring-brandAmber"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
             {search && (
               <X
                 onClick={() => setSearch("")}
-                className="w-4 h-4 absolute top-3 right-11 hover:text-red-600 hoverEffect"
+                className="w-5 h-5 absolute top-5 right-14 text-zinc-500 hover:text-brandAmber transition-colors cursor-pointer"
               />
             )}
             <button
               type="submit"
-              className="absolute right-0 top-0 bg-darkColor/10 w-10 h-full flex items-center justify-center rounded-tr-md hover:bg-darkColor hover:text-white hoverEffect"
+              className="absolute right-0 top-0 bg-white/5 w-12 h-full flex items-center justify-center rounded-r-sm hover:bg-brandAmber hover:text-black transition-all"
             >
               <Search className="w-5 h-5" />
             </button>
           </form>
         </DialogHeader>
-        <div className="w-full h-full overflow-y-scroll border border-darkColor/20 rounded-md bg-white">
+        <div className="w-full h-full overflow-y-scroll border border-white/5 rounded-sm bg-black mt-6">
           <div className="">
             {loading ? (
-              <p className="flex items-center px-6 gap-1 py-10 text-center text-green-600 font-semibold">
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Searching on progress...
-              </p>
+              <div className="flex flex-col items-center justify-center py-20 gap-4">
+                <Loader2 className="w-8 h-8 animate-spin text-brandAmber" />
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600 animate-pulse">
+                  Scanning Archives...
+                </p>
+              </div>
             ) : products?.length ? (
               products.map((product: Product) => (
                 <div
                   key={product?._id}
-                  className="bg-white overflow-hidden border-b"
+                  className="bg-black overflow-hidden border-b border-white/5 hover:bg-white/5 transition-colors"
                 >
-                  <div className="flex items-center p-1">
+                  <div className="flex items-center p-4">
                     <Link
                       href={`/product/${product?.slug?.current}`}
                       onClick={() => setShowSearch(false)}
-                      className="h-20 w-20 md:h-24 md:w-24 flex-shrink-0 border border-darkColor/20 rounded-md overflow-hidden group"
+                      className="h-20 w-20 md:h-28 md:w-28 flex-shrink-0 border border-white/10 rounded-sm overflow-hidden group bg-brandCharcoal"
                     >
                       {product?.images && (
                         <Image
@@ -108,31 +110,31 @@ const SearchBar = () => {
                           height={200}
                           src={urlFor(product?.images[0]).url()}
                           alt={"productImage"}
-                          className="object-cover w-full h-full group-hover:scale-110 hoverEffect"
+                          className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                         />
                       )}
                     </Link>
-                    <div className="px-4 py-2 flex-grow">
+                    <div className="px-6 py-2 flex-grow">
                       <div className="flex justify-between items-start">
                         <Link
                           href={`/product/${product?.slug?.current}`}
                           onClick={() => setShowSearch(false)}
                         >
-                          <h3 className="text-sm md:text-lg font-semibold text-gray-800 line-clamp-1">
+                          <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tight line-clamp-1 group-hover:text-brandAmber transition-colors">
                             {product.name}
                           </h3>
-                          <p className="text-sm text-gray-600 line-clamp-1">
-                            {product?.variantInfo}
+                          <p className="text-[10px] text-zinc-500 uppercase font-black tracking-widest mt-1 line-clamp-1">
+                            {product?.variantInfo || "Frontier Provision"}
                           </p>
                         </Link>
                         <PriceView
                           price={product?.price}
                           discount={product?.discount}
-                          className="md:text-lg"
+                          className="md:text-xl font-black text-white"
                         />
                       </div>
 
-                      <div className="w-60 mt-1">
+                      <div className="w-48 mt-4">
                         <AddToCartButton product={product} />
                       </div>
                     </div>
@@ -140,18 +142,23 @@ const SearchBar = () => {
                 </div>
               ))
             ) : (
-              <div className="text-center py-10 font-semibold tracking-wide">
-                {search && products?.length ? (
-                  <p>
-                    Nothing match with the keyword{" "}
-                    <span className="underline text-red-600">{search}</span>.
-                    Please try something else.
-                  </p>
+              <div className="text-center py-24 px-6">
+                {search && products?.length === 0 ? (
+                  <div className="space-y-4">
+                    <p className="text-zinc-500 text-xs font-black uppercase tracking-widest">
+                      Zero matches for: <span className="text-brandAmber underline">{search}</span>
+                    </p>
+                    <p className="text-zinc-600 text-[10px] font-black uppercase">Try identifying by category or material.</p>
+                  </div>
                 ) : (
-                  <p className="text-green-600 flex items-center justify-center gap-1">
-                    <Search className="w-5 h-5" />
-                    Search and explore your products from NUZII.
-                  </p>
+                  <div className="flex flex-col items-center gap-6">
+                    <div className="p-6 rounded-full bg-white/5">
+                        <Search className="w-10 h-10 text-brandAmber" />
+                    </div>
+                    <p className="text-zinc-500 text-xs font-black uppercase tracking-[0.2em]">
+                      Search and explore the Cowboy Wildmen collection.
+                    </p>
+                  </div>
                 )}
               </div>
             )}

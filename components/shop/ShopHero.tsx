@@ -66,7 +66,7 @@ export default function ShopHero({ heroes }: ShopHeroProps) {
                         {currentHero.primaryButtonText && currentHero.primaryButtonLink && (
                             <Link
                                 href={currentHero.primaryButtonLink}
-                                className="group inline-flex items-center gap-2 px-8 py-4 bg-nuziiRoseGold hover:bg-nuziiRoseGoldDark text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                className="group inline-flex items-center gap-2 px-8 py-4 bg-brandAmber hover:bg-brandAmber text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                             >
                                 {currentHero.primaryButtonText}
                             </Link>
@@ -74,7 +74,7 @@ export default function ShopHero({ heroes }: ShopHeroProps) {
                         {currentHero.secondaryButtonText && currentHero.secondaryButtonLink && (
                             <Link
                                 href={currentHero.secondaryButtonLink}
-                                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-nuziiText rounded-full transition-all duration-300 backdrop-blur-sm"
+                                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-white rounded-full transition-all duration-300 backdrop-blur-sm"
                             >
                                 {currentHero.secondaryButtonText}
                             </Link>
@@ -91,14 +91,14 @@ export default function ShopHero({ heroes }: ShopHeroProps) {
                         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all"
                         aria-label="Previous slide"
                     >
-                        <ChevronLeft className="w-6 h-6 text-nuziiText" />
+                        <ChevronLeft className="w-6 h-6 text-white" />
                     </button>
                     <button
                         onClick={nextSlide}
                         className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transition-all"
                         aria-label="Next slide"
                     >
-                        <ChevronRight className="w-6 h-6 text-nuziiText" />
+                        <ChevronRight className="w-6 h-6 text-white" />
                     </button>
 
                     {/* Pagination Dots */}

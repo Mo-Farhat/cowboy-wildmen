@@ -1,24 +1,28 @@
 "use client";
-import Logo from "./new/Logo";
-import { motion } from "motion/react";
-import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Loading = () => {
   return (
-    <div className="fixed min-h-screen w-full bg-white left-0 top-0 flex items-center justify-center">
-      <div className="flex flex-col justify-center items-center gap-1">
-        <Logo />
-        <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="flex items-center space-x-2 text-green-800"
-        >
-          <Loader2 className="animate-spin" />
-          <span className="font-semibold tracking-wide">
-            NUZII is loading...
-          </span>
-        </motion.div>
-      </div>
+    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-[100]">
+      <motion.div
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 2,
+          ease: "easeInOut",
+        }}
+        className="w-24 h-24 relative flex items-center justify-center"
+      >
+        <div className="absolute inset-0 border-2 border-brandAmber/20 rounded-full" />
+        <div className="absolute inset-0 border-t-2 border-brandAmber rounded-full animate-spin" />
+        <span className="text-[10px] font-black text-brandAmber uppercase tracking-tighter">Wildmen</span>
+      </motion.div>
+      <p className="mt-8 text-[10px] font-black uppercase tracking-[0.4em] text-zinc-600 animate-pulse">
+        Initializing Gear
+      </p>
     </div>
   );
 };

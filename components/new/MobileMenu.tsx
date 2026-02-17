@@ -12,7 +12,7 @@ const MobileMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResul
   };
   return (
     <>
-      <button onClick={toggleSidebar} className="xl:hidden text-nuziiText hover:text-nuziiRoseGoldDark transition-colors">
+      <button onClick={toggleSidebar} className="xl:hidden text-white hover:text-brandAmber transition-colors">
         <AlignLeft className="w-6 h-6" />
       </button>
       <div className="xl:hidden">

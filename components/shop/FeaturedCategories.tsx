@@ -11,15 +11,15 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
     if (!categories || categories.length === 0) return null;
 
     return (
-        <section className="py-16 px-6 md:px-12 bg-nuziiBeige">
+        <section className="py-16 px-6 md:px-12 bg-black">
             <div className="container mx-auto max-w-7xl">
                 {/* Section Title */}
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-light text-nuziiText mb-4">
-                        Shop by Category
+                    <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4">
+                        SCOUT BY SECTOR
                     </h2>
-                    <p className="text-lg text-nuziiTextLight font-light max-w-2xl mx-auto">
-                        Explore our curated collections designed for your modest lifestyle
+                    <p className="text-lg text-zinc-500 font-medium max-w-2xl mx-auto italic">
+                        &ldquo;Categorized for the modern frontiersman.&rdquo;
                     </p>
                 </div>
 
@@ -29,7 +29,7 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
                         <Link
                             key={category._id}
                             href={category.slug?.current ? `/category/${category.slug.current}` : '#'}
-                            className="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300"
+                            className="group relative overflow-hidden rounded-lg bg-brandCharcoal border border-white/5 hover:border-brandAmber/40 transition-all duration-500"
                         >
                             {/* Category Image */}
                             <div className="relative w-full aspect-[3/4] overflow-hidden">
@@ -41,8 +41,8 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
                                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                 ) : (
-                                    <div className="w-full h-full bg-gradient-to-br from-nuziiRoseGold/20 to-nuziiSand/40 flex items-center justify-center">
-                                        <span className="text-6xl text-nuziiRoseGold/40">
+                                    <div className="w-full h-full bg-gradient-to-br from-brandAmber/20 to-zinc-800/40 flex items-center justify-center">
+                                        <span className="text-6xl text-brandAmber/40">
                                             {category.title?.charAt(0) || '?'}
                                         </span>
                                     </div>
@@ -52,17 +52,17 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
                             </div>
 
                             {/* Category Info */}
-                            <div className="p-6 relative">
-                                <h3 className="text-xl font-light text-nuziiText mb-2 group-hover:text-nuziiRoseGoldDark transition-colors">
+                             <div className="p-8 relative">
+                                <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-2 group-hover:text-brandAmber transition-colors">
                                     {category.title}
                                 </h3>
                                 {category.description && (
-                                    <p className="text-sm text-nuziiTextLight font-light line-clamp-2">
+                                    <p className="text-sm text-zinc-500 font-light line-clamp-2">
                                         {category.description}
                                     </p>
                                 )}
                                 {/* Decorative border on hover */}
-                                <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-nuziiRoseGold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                                <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-brandAmber transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                             </div>
                         </Link>
                     ))}

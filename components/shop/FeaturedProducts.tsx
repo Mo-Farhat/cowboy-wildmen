@@ -29,15 +29,15 @@ export default function FeaturedProducts({
     const currentProducts = tabs.find((tab) => tab.id === activeTab)?.products || [];
 
     return (
-        <section className="py-16 px-6 md:px-12 bg-white">
+        <section className="py-24 px-6 md:px-12 bg-black">
             <div className="container mx-auto max-w-7xl">
                 {/* Section Title */}
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-light text-nuziiText mb-4">
-                        Featured Products
+                    <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4">
+                        FEATURED GEAR
                     </h2>
-                    <p className="text-lg text-nuziiTextLight font-light max-w-2xl mx-auto">
-                        Discover our handpicked selection of premium modest fashion
+                    <p className="text-lg text-zinc-500 font-medium max-w-2xl mx-auto italic">
+                        &ldquo;Selected for their endurance and city-ready silhouettes.&rdquo;
                     </p>
                 </div>
 
@@ -47,9 +47,9 @@ export default function FeaturedProducts({
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`px-8 py-3 rounded-full font-light transition-all duration-300 ${activeTab === tab.id
-                                ? "bg-nuziiRoseGold text-white shadow-lg"
-                                : "bg-nuziiBeige text-nuziiText hover:bg-nuziiSand"
+                            className={`px-8 py-3 rounded-sm font-black uppercase tracking-widest text-xs transition-all duration-300 ${activeTab === tab.id
+                                ? "bg-brandAmber text-black shadow-2xl"
+                                : "bg-white/5 text-zinc-500 hover:text-white hover:bg-white/10"
                                 }`}
                         >
                             {tab.label}
@@ -76,7 +76,7 @@ export default function FeaturedProducts({
                 {/* Empty State */}
                 {currentProducts.length === 0 && (
                     <div className="text-center py-20">
-                        <p className="text-nuziiTextLight text-lg">
+                        <p className="text-zinc-500 text-lg">
                             No products available in this category yet.
                         </p>
                     </div>

@@ -4,18 +4,17 @@ import React from "react";
 
 const NotFoundPage = () => {
   return (
-    <div className="bg-white relative min-h-screen">
+    <div className="bg-black relative min-h-screen text-zinc-300">
       <div className="h-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
             <Logo />
 
-            <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
-              Looking for something?
+            <h2 className="mt-6 text-3xl font-extrabold text-brandAmber">
+              System Error: Page Not Found
             </h2>
-            <p className="mt-2 text-sm text-gray-600">
-              We&apos;re sorry. The Web address you entered is not a functioning
-              page on our site.
+            <p className="mt-2 text-sm text-zinc-400">
+              The requested data stream could not be located. This sector may be corrupted or non-existent.
             </p>
           </div>
           <div className="mt-8 space-y-6">
@@ -24,7 +23,7 @@ const NotFoundPage = () => {
                 href="/"
                 className="w-full flex items-center justify-center px-4 py-2 border border-transparent text-sm font-semibold rounded-md text-white bg-darkBlue/80 hover:bg-darkBlue focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-amazonOrangeDark hoverEffect"
               >
-                Go to NUZII&apos;s home page
+                Go to Cowboy Wildmen&apos;s home page
               </Link>
               <Link
                 href="/help"

@@ -46,7 +46,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                         </p>
                                     )}
                                     {leftBanner.ctaText && (
-                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-nuziiRoseGold hover:bg-nuziiRoseGoldDark rounded-full transition-colors">
+                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-brandAmber hover:bg-white text-black font-black uppercase tracking-widest transition-colors">
                                             {leftBanner.ctaText}
                                         </span>
                                     )}
@@ -132,7 +132,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                             <p className="text-sm opacity-90 mb-2">{bottomRight.description}</p>
                                         )}
                                         {bottomRight.ctaText && (
-                                            <span className="inline-flex items-center gap-2 px-5 py-2 bg-nuziiRoseGold hover:bg-nuziiRoseGoldDark rounded-full text-sm transition-colors">
+                                            <span className="inline-flex items-center gap-2 px-5 py-2 bg-brandAmber hover:bg-white text-black font-black uppercase tracking-widest text-xs transition-colors">
                                                 {bottomRight.ctaText}
                                             </span>
                                         )}

@@ -8,38 +8,38 @@ interface ContactItemData {
 
 const data: ContactItemData[] = [
   {
-    title: "Visit Us",
-    subtitle: "New Orlean, USA",
+    title: "The Outpost",
+    subtitle: "New Orleans, LA",
     icon: (
-      <MapPin className="h-6 w-6 text-gray-600 group-hover:text-darkColor transition-colors" />
+      <MapPin className="h-5 w-5 text-zinc-500 group-hover:text-brandAmber transition-colors" />
     ),
   },
   {
-    title: "Call Us",
-    subtitle: "+12 958 648 597",
+    title: "Signal",
+    subtitle: "+1 (555) WILDMEN",
     icon: (
-      <Phone className="h-6 w-6 text-gray-600 group-hover:text-darkColor transition-colors" />
+      <Phone className="h-5 w-5 text-zinc-500 group-hover:text-brandAmber transition-colors" />
     ),
   },
   {
-    title: "Working Hours",
-    subtitle: "Mon - Sat: 10:00 AM - 7:00 PM",
+    title: "Watch",
+    subtitle: "Daily: 10:00 - 19:00",
     icon: (
-      <Clock className="h-6 w-6 text-gray-600 group-hover:text-darkColor transition-colors" />
+      <Clock className="h-5 w-5 text-zinc-500 group-hover:text-brandAmber transition-colors" />
     ),
   },
   {
-    title: "Email Us",
-    subtitle: "NUZII@gmail.com",
+    title: "Transmission",
+    subtitle: "support@wildmen.com",
     icon: (
-      <Mail className="h-6 w-6 text-gray-600 group-hover:text-darkColor transition-colors" />
+      <Mail className="h-5 w-5 text-zinc-500 group-hover:text-brandAmber transition-colors" />
     ),
   },
 ];
 
 const FooterTop = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 border-b">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-b border-white/5">
       {data.map((item, index) => (
         <ContactItem
           key={index}
@@ -60,13 +60,15 @@ interface ContactItemProps {
 
 const ContactItem = ({ icon, title, content }: ContactItemProps) => {
   return (
-    <div className="flex items-center gap-3 group hover:bg-gray-50 p-4 transition-colors">
-      {icon}
+    <div className="flex items-center gap-6 group hover:bg-white/5 p-8 transition-colors border-r border-white/5 last:border-r-0">
+      <div className="p-3 rounded-sm border border-white/10 group-hover:border-brandAmber/50 transition-colors">
+        {icon}
+      </div>
       <div>
-        <h3 className="font-semibold text-gray-900 group-hover:text-darkColor transition-colors">
+        <h3 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest group-hover:text-brandAmber transition-colors mb-1">
           {title}
         </h3>
-        <p className="text-gray-600 text-sm mt-1 group-hover:text-gray-900 transition-colors">
+        <p className="text-white text-xs font-black uppercase tracking-tight group-hover:text-white transition-colors">
           {content}
         </p>
       </div>

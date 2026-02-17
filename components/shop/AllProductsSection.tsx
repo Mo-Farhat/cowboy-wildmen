@@ -57,16 +57,16 @@ export default function AllProductsSection({
             "All Products";
 
     return (
-        <section className="py-16 px-6 md:px-12 bg-nuziiBeige/30">
+        <section className="py-24 px-6 md:px-12 bg-black">
             <div className="container mx-auto max-w-7xl">
                 {/* Section Header with Filter */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
-                    <div>
-                        <h2 className="text-4xl md:text-5xl font-light text-nuziiText mb-2">
-                            Browse Our Collection
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div className="space-y-4">
+                        <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter">
+                            THE ARMORY.
                         </h2>
-                        <p className="text-lg text-nuziiTextLight font-light">
-                            Explore our complete range of modest fashion
+                        <p className="text-lg text-zinc-500 font-medium">
+                            Explore the full Cowboy Wildmen collection. Built for the bold.
                         </p>
                     </div>
 
@@ -74,28 +74,26 @@ export default function AllProductsSection({
                     <div className="relative">
                         <button
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                            className="flex items-center gap-3 px-6 py-3 bg-white border-2 border-nuziiRoseGold/30 rounded-full hover:border-nuziiRoseGold transition-all duration-300 min-w-[200px] justify-between"
+                            className="flex items-center gap-3 px-6 py-3 bg-black border-2 border-white/10 rounded-sm hover:border-brandAmber transition-all duration-300 min-w-[220px] justify-between"
                         >
-                            <span className="text-nuziiText font-light capitalize">
+                            <span className="text-white font-black uppercase tracking-widest text-xs">
                                 {currentCategoryName}
                             </span>
                             <ChevronDown
-                                className={`w-5 h-5 text-nuziiRoseGold transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""
-                                    }`}
+                                className={`w-5 h-5 text-brandAmber transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`}
                             />
                         </button>
 
-                        {/* Dropdown Menu */}
                         {isDropdownOpen && (
-                            <div className="absolute top-full right-0 mt-2 w-full bg-white rounded-2xl shadow-xl border border-nuziiBeige p-2 z-50">
+                            <div className="absolute top-full right-0 mt-2 w-full bg-brandCharcoal rounded-sm shadow-2xl border border-white/5 p-2 z-50">
                                 <button
                                     onClick={() => {
                                         setSelectedCategory("all");
                                         setIsDropdownOpen(false);
                                     }}
                                     className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${selectedCategory === "all"
-                                        ? "bg-nuziiRoseGold text-white"
-                                        : "hover:bg-nuziiCream text-nuziiText"
+                                        ? "bg-brandAmber text-black"
+                                        : "hover:bg-white/5 text-zinc-400 font-black uppercase tracking-widest text-[10px]"
                                         }`}
                                 >
                                     All Products
@@ -110,8 +108,8 @@ export default function AllProductsSection({
                                             }
                                         }}
                                         className={`w-full text-left px-4 py-3 rounded-lg transition-colors capitalize ${selectedCategory === category.slug?.current
-                                            ? "bg-nuziiRoseGold text-white"
-                                            : "hover:bg-nuziiCream text-nuziiText"
+                                            ? "bg-brandAmber text-black"
+                                            : "hover:bg-white/5 text-zinc-400 font-black uppercase tracking-widest text-[10px]"
                                             }`}
                                     >
                                         {category.title}
@@ -125,7 +123,7 @@ export default function AllProductsSection({
                 {/* Products Grid */}
                 {loading ? (
                     <div className="flex items-center justify-center py-20">
-                        <div className="flex items-center gap-3 text-nuziiRoseGold">
+                        <div className="flex items-center gap-3 text-brandAmber">
                             <Loader2 className="w-6 h-6 animate-spin" />
                             <span className="text-lg font-light">Loading products...</span>
                         </div>
@@ -149,7 +147,7 @@ export default function AllProductsSection({
                     </AnimatePresence>
                 ) : (
                     <div className="text-center py-20">
-                        <p className="text-nuziiTextLight text-lg font-light">
+                        <p className="text-zinc-500 text-lg font-light">
                             No products found in this category.
                         </p>
                     </div>
@@ -158,7 +156,7 @@ export default function AllProductsSection({
                 {/* Product Count */}
                 {!loading && products?.length > 0 && (
                     <div className="text-center mt-8">
-                        <p className="text-nuziiTextLight font-light">
+                        <p className="text-zinc-500 font-light">
                             Showing {products.length} product{products.length !== 1 ? "s" : ""}
                         </p>
                     </div>

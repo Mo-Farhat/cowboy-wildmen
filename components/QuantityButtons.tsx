@@ -1,61 +1,54 @@
 import React from "react";
 import { Button } from "./ui/button";
-import { HiMinus, HiPlus } from "react-icons/hi2";
+import { Minus, Plus } from "lucide-react";
 import toast from "react-hot-toast";
 import useCartStore from "@/store";
 import { Product } from "@/sanity.types";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/lib/utils";
 
 interface Props {
   product: Product;
   className?: string;
-  borderStyle?: string;
 }
 
-const QuantityButtons = ({ product, className, borderStyle }: Props) => {
+const QuantityButtons = ({ product, className }: Props) => {
   const { addItem, removeItem, getItemCount } = useCartStore();
   const itemCount = getItemCount(product?._id);
-  const isOutOfStock = product?.stock === 0;
 
   const handleRemoveProduct = () => {
     removeItem(product?._id);
     if (itemCount > 1) {
-      toast.success("Quantity Decreased successfully!");
+      toast.success("Quantity reduced");
     } else {
-      toast.success(`${product?.name?.substring(0, 12)} removed successfully!`);
+      toast.success(`${product?.name?.substring(0, 12)}... removed`);
     }
   };
+
+  const handleAddProduct = () => {
+    addItem(product);
+    toast.success("Quantity increased");
+  };
+
   return (
-    <div
-      className={twMerge(
-        "flex items-center gap-1 pb-1 text-base",
-        borderStyle,
-        className
-      )}
-    >
+    <div className={cn("flex items-center gap-2", className)}>
       <Button
         variant="outline"
         size="icon"
-        className="w-6 h-6 cursor-pointer"
         onClick={handleRemoveProduct}
-        disabled={itemCount === 0 || isOutOfStock}
+        className="w-8 h-8 rounded-sm bg-brandCharcoal border-white/10 text-white hover:bg-brandAmber hover:text-black transition-all"
       >
-        <HiMinus />
+        <Minus className="w-3 h-3" />
       </Button>
-      <span className="font-semibold w-8 text-center text-darkColor">
+      <span className="w-8 text-center font-black text-xs text-white">
         {itemCount}
       </span>
       <Button
         variant="outline"
         size="icon"
-        className="w-6 h-6 cursor-pointer"
-        onClick={() => {
-          addItem(product);
-          toast.success("Quantity increased successfully!");
-        }}
-        disabled={isOutOfStock}
+        onClick={handleAddProduct}
+        className="w-8 h-8 rounded-sm bg-brandCharcoal border-white/10 text-white hover:bg-brandAmber hover:text-black transition-all"
       >
-        <HiPlus />
+        <Plus className="w-3 h-3" />
       </Button>
     </div>
   );

@@ -9,37 +9,28 @@ import {
 
 const ProductCharacteristics = ({ product }: { product: Product }) => {
   return (
-    <Accordion type="single" collapsible>
-      <AccordionItem value="item-1">
-        <AccordionTrigger className="font-bold">
-          {product?.name}: Characteristics
+    <Accordion type="single" collapsible className="border-t border-white/5">
+      <AccordionItem value="item-1" className="border-none">
+        <AccordionTrigger className="font-black uppercase tracking-widest text-xs hover:text-brandAmber transition-colors py-6">
+          Technical Specifications
         </AccordionTrigger>
-        <AccordionContent className="flex flex-col gap-1">
-          <p className="flex items-center justify-between">
-            Brand: <span className="font-semibold tracking-wide">{product?.brand || "Unknown"}</span>
-          </p>
-          <p className="flex items-center justify-between">
-            Collection:{" "}
-            <span className="font-semibold tracking-wide">{product?.collection || "N/A"}</span>
-          </p>
-          <p className="flex items-center justify-between">
-            Type:{" "}
-            <span className="font-semibold tracking-wide">
-              {product?.variant}
-            </span>
-          </p>
-          <p className="flex items-center justify-between">
-            Stock:{" "}
-            <span className="font-semibold tracking-wide">
-              {product?.stock ? "Available" : "Out of Stock"}
-            </span>
-          </p>
-          <p className="flex items-center justify-between">
-            Variant:{" "}
-            <span className="font-semibold tracking-wide">
-              {product?.variantInfo}
-            </span>
-          </p>
+        <AccordionContent className="pb-8 space-y-4">
+          <div className="flex justify-between border-b border-white/5 pb-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Origin</span>
+            <span className="text-sm font-bold">{product?.brand || "COWBOY WILDMEN"}</span>
+          </div>
+          <div className="flex justify-between border-b border-white/5 pb-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Deployment</span>
+            <span className="text-sm font-bold">{product?.collection || "Frontier Essential"}</span>
+          </div>
+          <div className="flex justify-between border-b border-white/5 pb-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Classification</span>
+            <span className="text-sm font-bold">{product?.variant || "Heavyweight"}</span>
+          </div>
+          <div className="flex justify-between border-b border-white/5 pb-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Inventory Status</span>
+            <span className="text-sm font-bold text-brandAmber">{product?.stock ? "Active" : "Depleted"}</span>
+          </div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>

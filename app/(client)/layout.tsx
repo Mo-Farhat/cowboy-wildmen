@@ -9,8 +9,8 @@ import DisableDraftMode from "@/components/DisableDraftMode";
 import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
-  title: "NUZII",
-  description: "Elevate Your Everyday Style with NUZII",
+  title: "Cowboy Wildmen",
+  description: "Made for the Wild. Shaped for the City. Premium Urban Western Gear.",
 };
 
 export default async function RootLayout({
@@ -23,7 +23,7 @@ export default async function RootLayout({
       <div>
         {(await draftMode()).isEnabled && (
           <>
-            <DisableDraftMode />
+            Go to Cowboy Wildmen's home page
             <VisualEditing />
           </>
         )}

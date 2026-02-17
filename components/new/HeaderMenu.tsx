@@ -10,39 +10,40 @@ const HeaderMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResul
   const isActive = (path: string) => pathname === path;
 
   return (
-    <div className="hidden xl:inline-flex items-center gap-8 text-sm font-medium text-nuziiText tracking-wide">
+    <div className="hidden xl:inline-flex items-center gap-10 text-[11px] font-black uppercase tracking-[0.2em] text-white">
       <Link
         href={"/"}
-        className={`hover:text-nuziiRoseGoldDark transition-colors duration-300 ${isActive("/") ? "text-nuziiRoseGoldDark" : ""
+        className={`hover:text-brandAmber transition-colors duration-300 ${isActive("/") ? "text-brandAmber" : ""
           }`}
       >
-        Home
+        Frontier
       </Link>
 
       <div className="relative group">
         <button
-          className={`flex items-center gap-1 hover:text-nuziiRoseGoldDark transition-colors duration-300 ${pathname.startsWith("/shop") || pathname.startsWith("/category")
-            ? "text-nuziiRoseGoldDark"
+          className={`flex items-center gap-1 hover:text-brandAmber transition-colors duration-300 ${pathname.startsWith("/shop") || pathname.startsWith("/category")
+            ? "text-brandAmber"
             : ""
             }`}
         >
-          Shop
-          <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+          Gear
+          <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" />
         </button>
 
-        <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
-          <div className="bg-white rounded-xl shadow-xl border border-nuziiBeige p-4 min-w-[200px] flex flex-col gap-2">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+          <div className="bg-brandCharcoal border border-white/5 p-6 min-w-[240px] flex flex-col gap-3 shadow-2xl backdrop-blur-xl">
             <Link
               href="/shop"
-              className="px-4 py-2 hover:bg-nuziiCream rounded-lg text-nuziiText hover:text-nuziiRoseGoldDark transition-colors"
+              className="px-4 py-3 hover:bg-white/5 rounded-sm text-zinc-400 hover:text-brandAmber transition-all font-black tracking-widest text-[10px]"
             >
-              All Products
+              All Provisions
             </Link>
+            <div className="h-px bg-white/5 my-1" />
             {categories?.map((category) => (
               <Link
                 key={category?._id}
                 href={`/category/${category?.slug?.current}`}
-                className="px-4 py-2 hover:bg-nuziiCream rounded-lg text-nuziiText hover:text-nuziiRoseGoldDark transition-colors capitalize"
+                className="px-4 py-3 hover:bg-white/5 rounded-sm text-zinc-400 hover:text-brandAmber transition-all font-black tracking-widest text-[10px] uppercase"
               >
                 {category?.title}
               </Link>
@@ -53,18 +54,18 @@ const HeaderMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResul
 
       <Link
         href={"/about"}
-        className={`hover:text-nuziiRoseGoldDark transition-colors duration-300 ${isActive("/about") ? "text-nuziiRoseGoldDark" : ""
+        className={`hover:text-brandAmber transition-colors duration-300 ${isActive("/about") ? "text-brandAmber" : ""
           }`}
       >
-        About
+        Chronicles
       </Link>
 
       <Link
         href={"/contact"}
-        className={`hover:text-nuziiRoseGoldDark transition-colors duration-300 ${isActive("/contact") ? "text-nuziiRoseGoldDark" : ""
+        className={`hover:text-brandAmber transition-colors duration-300 ${isActive("/contact") ? "text-brandAmber" : ""
           }`}
       >
-        Contact
+        Signal
       </Link>
     </div>
   );

@@ -1,71 +1,71 @@
 export const headerData = [
-  { title: "Shawls", href: "/shawls" },
-  { title: "Bags", href: "/bags" },
-  { title: "Jewellery", href: "/jewellery" },
-  { title: "Hijab Accessories", href: "/hijab-accessories" },
+  { title: "Gear", href: "/shop" },
+  { title: "Outerwear", href: "/category/jackets" },
+  { title: "Tees", href: "/category/tees" },
+  { title: "Bottoms", href: "/category/bottoms" },
 ];
 
 export const productType = [
-  { title: "Shawls", value: "shawls" },
-  { title: "Bags", value: "bags" },
-  { title: "Jewellery", value: "jewellery" },
-  { title: "Hijab Accessories", value: "hijab-accessories" },
+  { title: "Jackets", value: "jackets" },
+  { title: "Tees", value: "tees" },
+  { title: "Denim", value: "denim" },
+  { title: "Accessories", value: "accessories" },
 ];
 
 export const quickLinksData = [
-  { title: "About us", href: "/about" },
-  { title: "Contact us", href: "/contact" },
-  { title: "Terms & Conditions", href: "/terms" },
-  { title: "Privacy Policy", href: "/privacy" },
-  { title: "FAQs", href: "/faqs" },
+  { title: "Our Story", href: "/about" },
+  { title: "Contact", href: "/contact" },
+  { title: "Terms", href: "/terms" },
+  { title: "Privacy", href: "/privacy" },
+  { title: "FAQS", href: "/faqs" },
 ];
+
 export const categoriesData = [
-  { title: "Shawls", href: "/shawls" },
-  { title: "Bags", href: "/bags" },
-  { title: "Jewellery", href: "/jewellery" },
-  { title: "Hijab Accessories", href: "/hijab-accessories" },
+  { title: "Jackets", href: "/category/jackets" },
+  { title: "Tees", href: "/category/tees" },
+  { title: "Denim", href: "/category/denim" },
+  { title: "Accessories", href: "/category/accessories" },
 ];
+
 export const customerCareLinks = [
-  { title: "Contact Us", href: "/contact" },
-  { title: "Delivery Info", href: "/delivery" },
-  { title: "Returns", href: "/returns" },
-  { title: "Order Tracking", href: "/tracking" },
+  { title: "Contact Support", href: "/contact" },
+  { title: "Shipping Information", href: "/delivery" },
+  { title: "Return Policy", href: "/returns" },
+  { title: "Track Transmission", href: "/tracking" },
   { title: "Size Guide", href: "/size-guide" },
-  { title: "FAQs", href: "/faqs" },
-  { title: "Payment Options", href: "/payment" },
+  { title: "Operational FAQS", href: "/faqs" },
 ];
 
 export const socialMediaLinks = [
-  { title: "Instagram", href: "https://www.instagram.com/nuzi.co?igsh=aHJzYjExZXM2NGY5", platform: "instagram" },
-  { title: "TikTok", href: "https://www.tiktok.com/@nuzi.co?_r=1&_t=ZS-91h06CM6Tp3", platform: "tiktok" },
-  { title: "Facebook", href: "https://facebook.com", platform: "facebook" },
-  { title: "WhatsApp Support", href: "https://wa.me/1234567890", platform: "whatsapp" },
+  { title: "Instagram", href: "https://www.instagram.com/cowboywildmen", platform: "instagram" },
+  { title: "TikTok", href: "https://www.tiktok.com/@cowboywildmen", platform: "tiktok" },
+  { title: "X", href: "https://twitter.com/cowboywildmen", platform: "twitter" },
 ];
 
 export const faqsData = [
   {
-    question: "What services does NUZII offer?",
+    question: "What is COWBOY WILDMEN?",
     answer:
-      "NUZII offers a wide range of technology solutions including custom software development, cloud services, and digital transformation consulting.",
+      "COWBOY WILDMEN is an independent design house producing heavyweight apparel built for those who value longevity, character, and urban-western utility.",
   },
   {
-    question: "How can I get support for NUZII products?",
+    question: "How do I track my transmission?",
     answer:
-      "You can reach our support team through our contact page or by emailing support@NUZII.com.",
+      "Once your order is processed, you'll receive a tracking ID via email. You can monitor your gear's journey on our tracking page.",
   },
   {
-    question: "Does NUZII offer training for its products?",
+    question: "What makes your gear different?",
     answer:
-      "Yes, we offer comprehensive training programs for all our products and services. Please contact our sales team for more information.",
+      "We prioritize fabric weight, reinforced construction, and designs that age with character. We don't build for seasons; we build for decades.",
   },
   {
-    question: "What industries does NUZII serve?",
+    question: "Do you offer international shipping?",
     answer:
-      "NUZII serves a wide range of industries including finance, healthcare, retail, and manufacturing.",
+      "We ship to most sovereign territories. Shipping times and rates vary by location and are calculated at checkout.",
   },
   {
-    question: "How does NUZII ensure data security?",
+    question: "How do I contact support?",
     answer:
-      "We employ industry-standard security measures and comply with all relevant data protection regulations to ensure the security of our clients' data.",
+      "Reach out to us at support@cowboywildmen.com or use our contact form. Real humans will respond within 24 hours.",
   },
 ];

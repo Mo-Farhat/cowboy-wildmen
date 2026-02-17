@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NUZII",
-  description: "Elevate Your Everyday Style with NUZII",
+  title: "COWBOY WILDMEN | Urban Western Apparel",
+  description: "Independent design for the modern rebel. Heavyweight fabrics, urban grit, and western heritage. Built to endure.",
 };
 
 const poppins = localFont({
