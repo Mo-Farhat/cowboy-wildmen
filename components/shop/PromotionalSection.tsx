@@ -28,7 +28,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                         >
                             <div className="relative w-full h-full">
                                 <Image
-                                    src={urlFor(leftBanner.image).url()}
+                                    src={(leftBanner.image as any).asset?.url || urlFor(leftBanner.image).url()}
                                     alt={leftBanner.title || "Promo banner"}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -46,7 +46,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                         </p>
                                     )}
                                     {leftBanner.ctaText && (
-                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-brandAmber hover:bg-white text-black font-black uppercase tracking-widest transition-colors">
+                                        <span className="brand-button brand-button-primary">
                                             {leftBanner.ctaText}
                                         </span>
                                     )}
@@ -66,7 +66,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                 >
                                     <div className="relative w-full h-full min-h-[240px]">
                                         <Image
-                                            src={urlFor(topRight1.image).url()}
+                                            src={(topRight1.image as any).asset?.url || urlFor(topRight1.image).url()}
                                             alt={topRight1.title || "Promo banner"}
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -91,7 +91,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                 >
                                     <div className="relative w-full h-full min-h-[240px]">
                                         <Image
-                                            src={urlFor(topRight2.image).url()}
+                                            src={(topRight2.image as any).asset?.url || urlFor(topRight2.image).url()}
                                             alt={topRight2.title || "Promo banner"}
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -118,7 +118,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                             >
                                 <div className="relative w-full h-full min-h-[240px]">
                                     <Image
-                                        src={urlFor(bottomRight.image).url()}
+                                        src={(bottomRight.image as any).asset?.url || urlFor(bottomRight.image).url()}
                                         alt={bottomRight.title || "Promo banner"}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -132,7 +132,7 @@ export default function PromotionalSection({ banners }: PromotionalSectionProps)
                                             <p className="text-sm opacity-90 mb-2">{bottomRight.description}</p>
                                         )}
                                         {bottomRight.ctaText && (
-                                            <span className="inline-flex items-center gap-2 px-5 py-2 bg-brandAmber hover:bg-white text-black font-black uppercase tracking-widest text-xs transition-colors">
+                                            <span className="brand-button brand-button-primary text-xs !px-5 !py-2">
                                                 {bottomRight.ctaText}
                                             </span>
                                         )}

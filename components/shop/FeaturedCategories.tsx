@@ -35,7 +35,7 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
                             <div className="relative w-full aspect-[3/4] overflow-hidden">
                                 {category.image ? (
                                     <Image
-                                        src={urlFor(category.image).url()}
+                                        src={(category.image as any).asset?.url || urlFor(category.image).url()}
                                         alt={category.title || "Category"}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-500"

@@ -25,7 +25,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                         >
                             <div className="relative w-full h-full">
                                 <Image
-                                    src={urlFor(leftBanner.image).url()}
+                                    src={(leftBanner.image as any).asset?.url || urlFor(leftBanner.image).url()}
                                     alt={leftBanner.title || "Banner"}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -43,7 +43,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                                         </p>
                                     )}
                                     {leftBanner.ctaText && (
-                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-brandAmber hover:bg-white text-black font-black uppercase tracking-widest transition-colors">
+                                        <span className="brand-button brand-button-primary">
                                             {leftBanner.ctaText}
                                         </span>
                                     )}
@@ -60,7 +60,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                         >
                             <div className="relative w-full h-full">
                                 <Image
-                                    src={urlFor(rightBanner.image).url()}
+                                    src={(rightBanner.image as any).asset?.url || urlFor(rightBanner.image).url()}
                                     alt={rightBanner.title || "Banner"}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -78,7 +78,7 @@ export default function MidPageBanners({ banners }: MidPageBannersProps) {
                                         </p>
                                     )}
                                     {rightBanner.ctaText && (
-                                        <span className="inline-flex items-center gap-2 px-6 py-3 bg-brandAmber hover:bg-white text-black font-black uppercase tracking-widest transition-colors">
+                                        <span className="brand-button brand-button-primary">
                                             {rightBanner.ctaText}
                                         </span>
                                     )}

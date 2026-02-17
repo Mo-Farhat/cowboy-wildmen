@@ -52,7 +52,7 @@ export default function ProductShowcaseRow({ showcases }: ProductShowcaseRowProp
                                 <div className="text-center pt-4">
                                     <Link
                                         href={showcase.ctaLink}
-                                        className="inline-flex items-center gap-2 px-8 py-3 bg-brandAmber hover:bg-brandAmber text-white rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                                        className="brand-button brand-button-primary"
                                     >
                                         {showcase.ctaText}
                                     </Link>

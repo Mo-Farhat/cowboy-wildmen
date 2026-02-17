@@ -14,7 +14,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`} className="block w-full h-full">
             <Image
-              src={urlFor(product.images[0]).url()}
+              src={(product.images[0].asset as any)?.url || urlFor(product.images[0]).url()}
               alt="productImage"
               fill
               className={`object-cover transition-transform duration-1000 opacity-80 group-hover:opacity-100 ${product?.stock !== 0 && "group-hover:scale-110"}`}
