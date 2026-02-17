@@ -3,24 +3,24 @@ import Image from "next/image";
 
 const collections = [
     { 
-        name: "Heavyweighters", 
-        image: "/images/cowboy_wildmen_category_heavyweighters_hero.png",
-        tag: "Core Armor"
+        name: "Night Edit", 
+        image: "/images/western_chic_party_wear_lace.png",
+        tag: "After Hours"
     },
     { 
-        name: "Outerwear", 
-        image: "/images/cowboy_wildmen_hero_varsity.png",
-        tag: "Frontier Proof"
+        name: "Designer Shirts", 
+        image: "/images/western_chic_patterned_shirt.png",
+        tag: "Statement Pieces"
     },
     { 
-        name: "Daily Drivers", 
-        image: "/images/cowboy_wildmen_category_outerwear_field_jacket_hero.png",
-        tag: "Urban Utility"
+        name: "Premium Varsity", 
+        image: "/images/western_chic_varsity_jacket.png",
+        tag: "City Classic"
     },
     { 
-        name: "Rare Drops", 
-        image: "/images/cowboy_wildmen_lookbook_editorial_2.png",
-        tag: "Limited Supply"
+        name: "Essential Fits", 
+        image: "/images/western_chic_pants_stylish.png",
+        tag: "Modern Cut"
     },
 ];
 
@@ -30,12 +30,12 @@ export default function FeaturedCollections() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
                     <div className="space-y-6">
-                        <span className="text-brandAmber font-black tracking-[0.4em] text-xs uppercase">The Foundation</span>
+                        <span className="text-brandAmber font-black tracking-[0.4em] text-xs uppercase">The Collection</span>
                         <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">
-                            FRONTIER <br /> ESSENTIALS
+                            WARDROBE <br /> ESSENTIALS
                         </h2>
                         <p className="text-zinc-500 max-w-2xl text-xl font-medium italic">
-                            &ldquo;Built for the wild, tailored for the city.&rdquo;
+                            &ldquo;Elevated basics and statement pieces. Designed for the night.&rdquo;
                         </p>
                     </div>
                     <Link 

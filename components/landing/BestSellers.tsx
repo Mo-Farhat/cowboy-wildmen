@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Eye, ShoppingBag } from "lucide-react";
 
 const products = [
-    { id: 1, name: "Field Varsity Jacket", price: "$189.00", category: "Outerwear", image: "/images/cowboy_wildmen_hero_varsity.png" },
-    { id: 2, name: "Vintage Gurkha Pants", price: "$125.00", category: "Bottoms", image: "/images/cowboy_wildmen_leather_landscape.png" },
-    { id: 3, name: "Distressed Denim Shirt", price: "$95.00", category: "Provisions", image: "/images/cowboy_wildmen_category_heavyweighters_hero.png" },
-    { id: 4, name: "Heavyweight Box Hoodie", price: "$110.00", category: "Essentials", image: "/images/cowboy_wildmen_lookbook_editorial_2.png" },
+    { id: 1, name: "Essential Premium Polo", price: "$65.00", category: "Tops", image: "/images/western_chic_polo_fitted.png" },
+    { id: 2, name: "Structured Crew Neck", price: "$75.00", category: "Essentials", image: "/images/western_chic_sweatshirt_premium.png" },
+    { id: 3, name: "Tailored Western Pant", price: "$105.00", category: "Bottoms", image: "/images/western_chic_pants_stylish.png" },
+    { id: 4, name: "Statement Party Shirt", price: "$90.00", category: "Night Edit", image: "/images/western_chic_patterned_shirt.png" },
 ];
 
 export default function BestSellers() {
@@ -15,13 +15,13 @@ export default function BestSellers() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
                     <div className="space-y-4">
-                        <span className="text-brandAmber font-black tracking-[0.3em] text-xs uppercase">Hall of Fame</span>
+                        <span className="text-brandAmber font-black tracking-[0.3em] text-xs uppercase">The Hype</span>
                         <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none">
-                            BATTLE-TESTED FAVORITES.
+                            TRENDING NOW.
                         </h2>
                         <p className="text-zinc-500 font-medium max-w-xl">
-                            Proven designs that have survived the frontier and conquered the pavement. 
-                            These are the staples of the Cowboy Wildmen wardrobe.
+                            Styles moving fast. Premium fits for the modern nightlife. 
+                            Secure your look before the archive closes.
                         </p>
                     </div>
                     <Link

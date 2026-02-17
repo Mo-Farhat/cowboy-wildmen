@@ -3,10 +3,10 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const newArrivals = [
-    { id: 1, name: "Reinforced Field Jacket", price: "$210.00", tag: "Limited", image: "/images/cowboy_wildmen_category_outerwear_field_jacket_hero.png" },
-    { id: 2, name: "Heavyweight Corduroy Pants", price: "$145.00", tag: "New Drop", image: "/images/cowboy_wildmen_category_heavyweighters_hero.png" },
-    { id: 3, name: "Urban Frontier Graphic Tee", price: "$55.00", tag: "Restocked", image: "/images/cowboy_wildmen_lookbook_editorial_2.png" },
-    { id: 4, name: "Moleskin Work Shirt", price: "$130.00", tag: "Rare", image: "/images/cowboy_wildmen_hero_varsity.png" },
+    { id: 1, name: "Viscose Geometric Shirt", price: "$85.00", tag: "New Drop", image: "/images/western_chic_patterned_shirt.png" },
+    { id: 2, name: "Premium Lace Button-Down", price: "$95.00", tag: "Hot", image: "/images/western_chic_party_wear_lace.png" },
+    { id: 3, name: "Midnight Varsity Jacket", price: "$150.00", tag: "Restocked", image: "/images/western_chic_varsity_jacket.png" },
+    { id: 4, name: "Slim Fit Western Trouser", price: "$110.00", tag: "Trending", image: "/images/western_chic_pants_stylish.png" },
 ];
 
 export default function NewArrivals() {
@@ -14,12 +14,12 @@ export default function NewArrivals() {
         <section className="py-24 bg-black">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex flex-col items-center text-center mb-16 space-y-4">
-                    <span className="text-brandAmber font-black tracking-[0.4em] text-xs uppercase">The Frontier Files</span>
+                    <span className="text-brandAmber font-black tracking-[0.4em] text-xs uppercase">Fresh Drops</span>
                     <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none">
-                        FRESH PROVISIONS.
+                        JUST LANDED.
                     </h2>
                     <p className="text-zinc-500 max-w-2xl font-medium">
-                        New silhouettes designed for endurance. Once these are gone, they vanish back into the wild.
+                        New silhouettes designed for the modern cowboy. Secure your size before they're gone.
                     </p>
                 </div>
 

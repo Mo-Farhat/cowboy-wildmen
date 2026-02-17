@@ -10,26 +10,26 @@ const Lookbook = () => {
           {/* Main Large Image */}
           <div className="relative group overflow-hidden bg-brandCharcoal h-[600px] md:h-full border border-white/5">
             <Image
-              src="/images/cowboy_wildmen_lookbook_editorial_2.png"
-              alt="The Concrete Frontier"
+              src="/images/western_chic_party_wear_lace.png"
+              alt="Nightlife Aesthetic"
               fill
               className="object-cover opacity-80 transition-transform duration-1000 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             
             <div className="absolute bottom-16 left-16 right-16">
-              <span className="text-brandAmber font-black tracking-[0.4em] text-xs uppercase mb-6 block">Editorial Vol. 01</span>
+              <span className="text-brandAmber font-black tracking-[0.4em] text-xs uppercase mb-6 block">Editorial Vol. 02</span>
               <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-6 leading-[0.85]">
-                THE CONCRETE <br /> FRONTIER
+                OWN THE <br /> NIGHT
               </h2>
               <p className="text-zinc-300 font-medium mb-10 max-w-sm text-lg italic opacity-80">
-                &ldquo;Where desert dust meets city concrete.&rdquo;
+                &ldquo;When the sun sets, the real style comes out.&rdquo;
               </p>
               <Link 
                 href="/shop" 
                 className="brand-button brand-button-primary inline-block"
               >
-                Scan Archives
+                View Lookbook
               </Link>
             </div>
           </div>
@@ -42,8 +42,8 @@ const Lookbook = () => {
               <div className="absolute inset-0 bg-brandAmber/5 mix-blend-color" />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
                  <div className="w-full h-full border border-white/5 flex flex-col items-center justify-center gap-4">
-                    <span className="text-brandAmber font-black tracking-widest text-[10px] uppercase">Specification</span>
-                    <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">HEAVYWEIGHT <br /> REINFORCEMENT</h3>
+                    <span className="text-brandAmber font-black tracking-widest text-[10px] uppercase">Review</span>
+                    <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">WESTERN <br /> CHIC</h3>
                  </div>
               </div>
             </div>
@@ -51,15 +51,15 @@ const Lookbook = () => {
             {/* Bottom Right */}
             <div className="relative group overflow-hidden bg-brandCharcoal border border-white/5">
               <Image
-                src="/images/cowboy_wildmen_hero_varsity.png"
+                src="/images/western_chic_patterned_shirt.png"
                 alt="Detail Oriented"
                 fill
                 className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors" />
               <div className="absolute bottom-12 left-12">
-                <span className="text-brandAmber font-black tracking-widest text-[10px] uppercase mb-2 block">Featured Gear</span>
-                <h3 className="text-3xl font-black text-white uppercase tracking-tighter leading-none">EVERYDAY <br /> CARRY</h3>
+                <span className="text-brandAmber font-black tracking-widest text-[10px] uppercase mb-2 block">Featured Fit</span>
+                <h3 className="text-3xl font-black text-white uppercase tracking-tighter leading-none">PREMIUM <br /> VISCOSE</h3>
               </div>
             </div>
           </div>

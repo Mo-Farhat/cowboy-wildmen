@@ -50,12 +50,7 @@ export default function Hero() {
           animate="visible"
           className="flex flex-col items-center gap-4 max-w-5xl"
         >
-          <motion.span
-            variants={itemVariants}
-            className="text-brandAmber font-black tracking-widest text-sm uppercase mb-2"
-          >
-            New Fall/Winter 2024
-          </motion.span>
+          
 
           {/* Headline */}
           <motion.h1
