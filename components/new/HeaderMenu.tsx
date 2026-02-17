@@ -1,6 +1,7 @@
 "use client";
 import { FEATURED_CATEGORIES_QUERYResult } from "@/sanity.types";
 import Link from "next/link";
+import { categoriesData } from "@/constants";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
@@ -16,7 +17,7 @@ const HeaderMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResul
         className={`hover:text-brandAmber transition-colors duration-300 ${isActive("/") ? "text-brandAmber" : ""
           }`}
       >
-        Frontier
+        Home
       </Link>
 
       <div className="relative group">
@@ -26,7 +27,7 @@ const HeaderMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResul
             : ""
             }`}
         >
-          Gear
+          SHOP
           <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" />
         </button>
 
@@ -36,13 +37,13 @@ const HeaderMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResul
               href="/shop"
               className="px-4 py-3 hover:bg-white/5 rounded-sm text-zinc-400 hover:text-brandAmber transition-all font-black tracking-widest text-[10px]"
             >
-              All Provisions
+              All Products
             </Link>
             <div className="h-px bg-white/5 my-1" />
-            {categories?.map((category) => (
+            {categoriesData?.map((category) => (
               <Link
-                key={category?._id}
-                href={`/category/${category?.slug?.current}`}
+                key={category?.title}
+                href={category?.href}
                 className="px-4 py-3 hover:bg-white/5 rounded-sm text-zinc-400 hover:text-brandAmber transition-all font-black tracking-widest text-[10px] uppercase"
               >
                 {category?.title}
@@ -57,7 +58,7 @@ const HeaderMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResul
         className={`hover:text-brandAmber transition-colors duration-300 ${isActive("/about") ? "text-brandAmber" : ""
           }`}
       >
-        Chronicles
+        About
       </Link>
 
       <Link
@@ -65,7 +66,7 @@ const HeaderMenu = ({ categories }: { categories: FEATURED_CATEGORIES_QUERYResul
         className={`hover:text-brandAmber transition-colors duration-300 ${isActive("/contact") ? "text-brandAmber" : ""
           }`}
       >
-        Signal
+        Contact
       </Link>
     </div>
   );

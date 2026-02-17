@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Eye, ShoppingBag } from "lucide-react";
 
 const products = [
-    { id: 1, name: "Field Varsity Jacket", price: "$189.00", category: "Outerwear" },
-    { id: 2, name: "Vintage Gurkha Pants", price: "$125.00", category: "Bottoms" },
-    { id: 3, name: "Distressed Denim Shirt", price: "$95.00", category: "Provisions" },
-    { id: 4, name: "Heavyweight Box Hoodie", price: "$110.00", category: "Essentials" },
+    { id: 1, name: "Field Varsity Jacket", price: "$189.00", category: "Outerwear", image: "/images/cowboy_wildmen_hero_varsity.png" },
+    { id: 2, name: "Vintage Gurkha Pants", price: "$125.00", category: "Bottoms", image: "/images/cowboy_wildmen_leather_landscape.png" },
+    { id: 3, name: "Distressed Denim Shirt", price: "$95.00", category: "Provisions", image: "/images/cowboy_wildmen_category_heavyweighters_hero.png" },
+    { id: 4, name: "Heavyweight Box Hoodie", price: "$110.00", category: "Essentials", image: "/images/cowboy_wildmen_lookbook_editorial_2.png" },
 ];
 
 export default function BestSellers() {
@@ -35,12 +36,13 @@ export default function BestSellers() {
                     {products.map((product) => (
                         <div key={product.id} className="group bg-brandCharcoal border border-white/5 overflow-hidden transition-all duration-500 hover:border-brandAmber/30">
                             <div className="aspect-[3/4] bg-zinc-900 relative overflow-hidden">
-                                {/* Placeholder Image */}
-                                <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-800 p-8 text-center">
-                                    <div className="w-full h-full border border-dashed border-zinc-700 flex items-center justify-center">
-                                        <span className="text-[10px] font-black uppercase tracking-widest opacity-20">No Visual Data</span>
-                                    </div>
-                                </div>
+                                {/* Product Image */}
+                                <Image
+                                    src={product.image}
+                                    alt={product.name}
+                                    fill
+                                    className="object-cover"
+                                />
 
                                 {/* Quick Actions */}
                                 <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">

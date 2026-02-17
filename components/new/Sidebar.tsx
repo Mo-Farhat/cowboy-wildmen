@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useOutsideClick } from "@/hooks";
 import SocialMedia from "./SocialMedia";
 import { FEATURED_CATEGORIES_QUERYResult } from "@/sanity.types";
+import { categoriesData } from "@/constants";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -73,7 +74,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                     : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                     }`}
                 >
-                  Frontier
+                  Home
                 </Link>
 
                 {/* Shop Accordion */}
@@ -85,7 +86,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                       : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                       }`}
                   >
-                    <span>Gear</span>
+                    <span>SHOP</span>
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-300 ${isShopOpen ? "rotate-180" : ""
                         }`}
@@ -110,14 +111,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                               : "text-zinc-600 hover:text-white"
                               }`}
                           >
-                            All Provisions
+                            All Products
                           </Link>
-                          {categories?.map((item) => (
+                          {categoriesData?.map((item) => (
                             <Link
                               onClick={onClose}
                               key={item?.title}
-                              href={`/category/${item?.slug?.current}`}
-                              className={`px-4 py-2 text-[10px] uppercase font-black tracking-widest transition-colors flex items-center gap-2 ${pathname === `/category/${item?.slug?.current}`
+                              href={item?.href}
+                              className={`px-4 py-2 text-[10px] uppercase font-black tracking-widest transition-colors flex items-center gap-2 ${pathname === item?.href
                                 ? "text-brandAmber"
                                 : "text-zinc-600 hover:text-white"
                                 }`}
@@ -139,7 +140,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                     : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                     }`}
                 >
-                  Chronicles
+                  About
                 </Link>
 
                 <Link
@@ -150,7 +151,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                     : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                     }`}
                 >
-                  Signal
+                  Contact
                 </Link>
 
                 <Link
@@ -161,7 +162,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, categories }) => {
                     : "text-zinc-400 hover:bg-white/5 hover:text-brandAmber"
                     }`}
                 >
-                  My Transmissions
+                  My Orders
                 </Link>
               </div>
 

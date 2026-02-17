@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const newArrivals = [
-    { id: 1, name: "Reinforced Field Jacket", price: "$210.00", tag: "Limited" },
-    { id: 2, name: "Heavyweight Corduroy Pants", price: "$145.00", tag: "New Drop" },
-    { id: 3, name: "Urban Frontier Graphic Tee", price: "$55.00", tag: "Restocked" },
-    { id: 4, name: "Moleskin Work Shirt", price: "$130.00", tag: "Rare" },
+    { id: 1, name: "Reinforced Field Jacket", price: "$210.00", tag: "Limited", image: "/images/cowboy_wildmen_category_outerwear_field_jacket_hero.png" },
+    { id: 2, name: "Heavyweight Corduroy Pants", price: "$145.00", tag: "New Drop", image: "/images/cowboy_wildmen_category_heavyweighters_hero.png" },
+    { id: 3, name: "Urban Frontier Graphic Tee", price: "$55.00", tag: "Restocked", image: "/images/cowboy_wildmen_lookbook_editorial_2.png" },
+    { id: 4, name: "Moleskin Work Shirt", price: "$130.00", tag: "Rare", image: "/images/cowboy_wildmen_hero_varsity.png" },
 ];
 
 export default function NewArrivals() {
@@ -26,12 +27,13 @@ export default function NewArrivals() {
                     {newArrivals.map((product) => (
                         <div key={product.id} className="group cursor-pointer">
                             <div className="aspect-[4/5] bg-brandCharcoal relative overflow-hidden mb-6 border border-white/5 transition-all duration-500 group-hover:border-brandAmber/40">
-                                {/* Placeholder */}
-                                <div className="absolute inset-0 flex items-center justify-center text-zinc-800 p-12">
-                                     <div className="w-full h-full border border-dashed border-zinc-700/50 flex items-center justify-center">
-                                        <span className="text-[10px] font-black uppercase tracking-tighter opacity-10">Data Link Missing</span>
-                                     </div>
-                                </div>
+                                {/* Product Image */}
+                                <Image
+                                    src={product.image}
+                                    alt={product.name}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
 
                                 {/* Tag */}
                                 <div className="absolute top-0 right-0 bg-brandAmber px-4 py-2 text-[10px] font-black text-black uppercase tracking-widest">

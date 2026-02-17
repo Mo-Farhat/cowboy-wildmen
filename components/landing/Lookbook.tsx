@@ -10,7 +10,7 @@ const Lookbook = () => {
           {/* Main Large Image */}
           <div className="relative group overflow-hidden bg-brandCharcoal h-[600px] md:h-full border border-white/5">
             <Image
-              src="/_next/image?url=%2Fhome%2Ffarhat%2F.gemini%2Fantigravity%2Fbrain%2Fbec0e9a7-cedc-4650-ae76-ed93c4cc13c4%2Fcowboy_wildmen_lookbook_editorial_2_1771330908107.png&w=1080&q=75"
+              src="/images/cowboy_wildmen_lookbook_editorial_2.png"
               alt="The Concrete Frontier"
               fill
               className="object-cover opacity-80 transition-transform duration-1000 group-hover:scale-110"
@@ -51,7 +51,7 @@ const Lookbook = () => {
             {/* Bottom Right */}
             <div className="relative group overflow-hidden bg-brandCharcoal border border-white/5">
               <Image
-                src="/_next/image?url=%2Fhome%2Ffarhat%2F.gemini%2Fantigravity%2Fbrain%2Fbec0e9a7-cedc-4650-ae76-ed93c4cc13c4%2Fcowboy_wildmen_hero_varsity_1771330881978.png&w=1080&q=75"
+                src="/images/cowboy_wildmen_hero_varsity.png"
                 alt="Detail Oriented"
                 fill
                 className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"

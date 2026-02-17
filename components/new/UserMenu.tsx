@@ -49,7 +49,7 @@ const UserMenu = () => {
                 <DropdownMenuLabel className="p-4">
                     <div className="flex flex-col space-y-1">
                         <p className="text-[10px] font-black uppercase tracking-widest text-white">
-                            {user.displayName || "Frontier Member"}
+                            {user.displayName || "Member"}
                         </p>
                         <p className="text-[9px] font-black uppercase tracking-widest text-zinc-500">
                             {user.email}
@@ -58,14 +58,14 @@ const UserMenu = () => {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-white/5 mx-2" />
                 <DropdownMenuItem asChild className="p-3 cursor-pointer focus:bg-white/5 focus:text-brandAmber text-zinc-400 font-black uppercase tracking-widest text-[10px] transition-all">
-                    <Link href="/orders">My Transmissions</Link>
+                    <Link href="/orders">My Orders</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator className="bg-white/5 mx-2" />
                 <DropdownMenuItem
                     onClick={logout}
                     className="p-3 cursor-pointer text-red-500/80 focus:bg-red-500/10 focus:text-red-500 font-black uppercase tracking-widest text-[10px] transition-all"
                 >
-                    Abandon Session
+                    Log Out
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

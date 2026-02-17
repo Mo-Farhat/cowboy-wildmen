@@ -4,22 +4,22 @@ import Image from "next/image";
 const collections = [
     { 
         name: "Heavyweighters", 
-        image: "/_next/image?url=%2Fhome%2Ffarhat%2F.gemini%2Fantigravity%2Fbrain%2Fbec0e9a7-cedc-4650-ae76-ed93c4cc13c4%2Fcowboy_wildmen_category_heavyweighters_hero_1771331044059.png&w=1080&q=75",
+        image: "/images/cowboy_wildmen_category_heavyweighters_hero.png",
         tag: "Core Armor"
     },
     { 
         name: "Outerwear", 
-        image: "/_next/image?url=%2Fhome%2Ffarhat%2F.gemini%2Fantigravity%2Fbrain%2Fbec0e9a7-cedc-4650-ae76-ed93c4cc13c4%2Fcowboy_wildmen_hero_varsity_1771330881978.png&w=1080&q=75",
+        image: "/images/cowboy_wildmen_hero_varsity.png",
         tag: "Frontier Proof"
     },
     { 
         name: "Daily Drivers", 
-        image: "/_next/image?url=%2Fhome%2Ffarhat%2F.gemini%2Fantigravity%2Fbrain%2Fbec0e9a7-cedc-4650-ae76-ed93c4cc13c4%2Fcowboy_wildmen_leather_landscape_1771330948154.png&w=1080&q=75",
+        image: "/images/cowboy_wildmen_category_outerwear_field_jacket_hero.png",
         tag: "Urban Utility"
     },
     { 
         name: "Rare Drops", 
-        image: "/_next/image?url=%2Fhome%2Ffarhat%2F.gemini%2Fantigravity%2Fbrain%2Fbec0e9a7-cedc-4650-ae76-ed93c4cc13c4%2Fcowboy_wildmen_lookbook_editorial_2_1771330908107.png&w=1080&q=75",
+        image: "/images/cowboy_wildmen_lookbook_editorial_2.png",
         tag: "Limited Supply"
     },
 ];

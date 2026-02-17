@@ -1,5 +1,5 @@
 export const headerData = [
-  { title: "Gear", href: "/shop" },
+  { title: "SHOP", href: "/shop" },
   { title: "Outerwear", href: "/category/jackets" },
   { title: "Tees", href: "/category/tees" },
   { title: "Bottoms", href: "/category/bottoms" },
@@ -21,17 +21,21 @@ export const quickLinksData = [
 ];
 
 export const categoriesData = [
-  { title: "Jackets", href: "/category/jackets" },
-  { title: "Tees", href: "/category/tees" },
-  { title: "Denim", href: "/category/denim" },
-  { title: "Accessories", href: "/category/accessories" },
+  { title: "Polos", href: "/category/polos" },
+  { title: "Pants", href: "/category/pants" },
+  { title: "Sweatshirts", href: "/category/sweatshirts" },
+  { title: "Designer Shirts", href: "/category/designer-shirts" },
+  { title: "Crew Necks", href: "/category/crew-necks" },
+  { title: "Varsity Jackets", href: "/category/varsity-jackets" },
+  { title: "Football Jerseys", href: "/category/football-jerseys" },
+  { title: "Party Wears", href: "/category/party-wears" },
 ];
 
 export const customerCareLinks = [
   { title: "Contact Support", href: "/contact" },
   { title: "Shipping Information", href: "/delivery" },
   { title: "Return Policy", href: "/returns" },
-  { title: "Track Transmission", href: "/tracking" },
+  { title: "Track Order", href: "/tracking" },
   { title: "Size Guide", href: "/size-guide" },
   { title: "Operational FAQS", href: "/faqs" },
 ];
@@ -49,7 +53,7 @@ export const faqsData = [
       "COWBOY WILDMEN is an independent design house producing heavyweight apparel built for those who value longevity, character, and urban-western utility.",
   },
   {
-    question: "How do I track my transmission?",
+    question: "How do I track my order?",
     answer:
       "Once your order is processed, you'll receive a tracking ID via email. You can monitor your gear's journey on our tracking page.",
   },
@@ -61,7 +65,7 @@ export const faqsData = [
   {
     question: "Do you offer international shipping?",
     answer:
-      "We ship to most sovereign territories. Shipping times and rates vary by location and are calculated at checkout.",
+      "We ship to most locations. Shipping times and rates vary by location and are calculated at checkout.",
   },
   {
     question: "How do I contact support?",
